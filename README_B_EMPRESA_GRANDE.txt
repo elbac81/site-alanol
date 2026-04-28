@@ -1,0 +1,1 @@
+Versão B da homepage: redesign executivo/industrial com imagens reais de produto, hero premium, gamas em destaque, secção solar, método de seleção, aplicações e CTA técnico. Ficheiros principais alterados: index.html, css/style.css, css/style.min.css.

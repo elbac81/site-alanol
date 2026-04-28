@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombagem Solar — ALANOL Eletrobombas</title>
+<meta name="description" content="O que é bombagem solar, como funciona, vantagens e como dimensionar o sistema certo para rega, pecuária ou habitação isolada — com produtos ALANOL.">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=Roboto:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=202604271438">
+<style>
+/* page-level vars (complement style.css) */
+:root{
+  --sol:#F5A623;--sol-claro:#FEF0D0;--sol-deep:#D4850A;
+  --verde-sol:#156038;--verde-sol-bg:#e8f5ec;--verde-sol-border:#b7dfc4;
+  --pag-bg:#F5F7FA;--pag-bg2:#EBEEF2;--branco:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Barlow",sans-serif;background:var(--pag-bg);color:#1a1a1a;line-height:1.6;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+.sec{padding:5rem 0;}
+.sec-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--verde-sol);margin-bottom:.4rem;}
+.eyebrow.light{color:rgba(255,255,255,.4);}
+.sec-h{font-family:"Barlow Condensed",sans-serif;font-size:clamp(30px,4vw,50px);font-weight:800;line-height:1;color:#1a1a1a;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:.75rem;}
+.sec-h.light{color:#fff;}
+.sec-p{font-size:15px;color:#6b7f96;line-height:1.75;font-weight:300;max-width:600px;}
+
+/* HERO */
+.sol-hero{background:var(--brand,#2e363e);position:relative;overflow:hidden;padding:72px 2rem 80px;text-align:center;}
+.sol-hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(245,166,35,.16) 0%,transparent 65%);pointer-events:none;}
+.sol-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.3);border-radius:3px;padding:5px 14px;font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--sol);margin-bottom:1.5rem;position:relative;}
+.sol-hero h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(42px,7vw,88px);font-weight:800;line-height:.9;color:#fff;text-transform:uppercase;letter-spacing:-1.5px;margin-bottom:.6rem;position:relative;}
+.sol-hero h1 .accent{color:var(--sol);}
+.sol-hero-sub{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1.1rem;position:relative;}
+.sol-hero-desc{font-size:16px;color:rgba(255,255,255,.65);line-height:1.75;font-weight:300;max-width:560px;margin:0 auto 2.5rem;position:relative;}
+.sol-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.sol-hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:0;margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.08);padding-top:2.5rem;position:relative;}
+.hero-stat{padding:.75rem 2.5rem;border-right:1px solid rgba(255,255,255,.08);text-align:center;}
+.hero-stat:last-child{border:none;}
+.hero-stat-val{font-family:"Barlow Condensed",sans-serif;font-size:32px;font-weight:800;color:#fff;line-height:1;}
+.hero-stat-val .unit{font-size:18px;font-weight:600;color:var(--sol);}
+.hero-stat-lbl{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px;}
+
+/* INTRO */
+.intro-sec{background:var(--branco);}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.intro-text p{font-size:15px;color:#6b7f96;line-height:1.8;font-weight:300;margin-bottom:1rem;}
+.intro-text p:last-child{margin:0;}
+.intro-callout{background:var(--pag-bg);border-left:4px solid var(--sol);border-radius:0 4px 4px 0;padding:1rem 1.4rem;margin-top:1.5rem;}
+.intro-callout p{font-size:14px;color:#1a1a1a;margin:0;font-weight:400;line-height:1.6;}
+.intro-visual{background:#2e363e;border-radius:6px;padding:2.5rem 2rem;display:flex;flex-direction:column;gap:0;}
+.flow-step{display:flex;align-items:flex-start;gap:1.25rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.flow-step:last-child{border:none;padding-bottom:0;}
+.flow-num{width:36px;height:36px;border-radius:50%;background:var(--verde-sol);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:800;color:#fff;}
+.flow-text h4{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:2px;}
+.flow-text p{font-size:12px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.45;margin:0;}
+
+/* VANTAGENS */
+.vant-sec{background:var(--pag-bg);}
+.vant-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;margin-top:3rem;}
+.vant-card{background:var(--branco);border:1px solid #d8e2ec;border-top:3px solid var(--verde-sol);border-radius:4px;padding:1.75rem 1.5rem;transition:box-shadow .2s,transform .2s;}
+.vant-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.08);transform:translateY(-2px);}
+.vant-icon{width:40px;height:40px;background:var(--verde-sol-bg);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:.9rem;}
+.vant-icon svg{width:20px;height:20px;stroke:var(--verde-sol);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.vant-card h3{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#1a1a1a;margin-bottom:.4rem;}
+.vant-card p{font-size:13px;color:#6b7f96;line-height:1.65;font-weight:300;}
+
+/* APLICACOES */
+.apps-sec{background:var(--branco);}
+.apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;margin-top:3rem;}
+.app-card{background:#2e363e;border-radius:4px;padding:1.75rem 1.5rem;border:1px solid rgba(255,255,255,.05);transition:background .2s;}
+.app-card:hover{background:#3d4a5c;}
+.app-emoji{font-size:2rem;margin-bottom:.75rem;}
+.app-card h3{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:.4rem;}
+.app-card p{font-size:13px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.55;}
+
+/* COMPONENTES */
+.comp-sec{background:#1e252b;}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;}
+.comp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:2rem 1.75rem;transition:border-color .2s;}
+.comp-card:hover{border-color:rgba(21,96,56,.7);}
+.comp-num{font-family:"Barlow Condensed",sans-serif;font-size:40px;font-weight:800;color:var(--verde-sol);line-height:1;margin-bottom:.75rem;}
+.comp-card h3{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:.5rem;}
+.comp-card p{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.65;}
+.comp-hes{background:rgba(21,96,56,.18);border:1px solid rgba(21,96,56,.4);border-radius:4px;padding:1.25rem 1.5rem;margin-top:2rem;display:flex;gap:1rem;align-items:flex-start;}
+.comp-hes-badge{background:var(--verde-sol);color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.comp-hes p{font-size:13px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.6;margin:0;}
+.comp-hes a{color:#7ed4a0;}
+
+/* FAQ */
+.faq-sec{background:var(--pag-bg);}
+.faq-list{max-width:760px;margin:2.5rem auto 0;}
+.faq-item{border-bottom:1px solid #d8e2ec;}
+.faq-item:first-child{border-top:1px solid #d8e2ec;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;color:#1a1a1a;text-transform:uppercase;letter-spacing:.3px;user-select:none;}
+.faq-q::after{content:'+';font-size:22px;color:var(--verde-sol);transition:transform .2s;font-family:"Barlow",sans-serif;font-weight:300;flex-shrink:0;margin-left:1rem;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:600px;padding-bottom:1.1rem;}
+.faq-a p{font-size:14px;color:#6b7f96;line-height:1.75;font-weight:300;}
+
+/* TOOLS BLOCK */
+.tools-intro-band{background:#2e363e;padding:3rem 2rem 2rem;text-align:center;}
+
+.nav-tabs{position:sticky;top:68px;z-index:100;background:#2e363e;display:flex;justify-content:center;border-bottom:1px solid rgba(255,255,255,.07);overflow-x:auto;}
+.tab-btn{flex:0 0 auto;padding:15px 24px;color:rgba(255,255,255,.45);background:none;border:none;cursor:pointer;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.tab-btn:hover{color:rgba(255,255,255,.85);}
+.tab-btn.active{color:var(--sol);border-bottom-color:var(--sol);}
+
+.tool-section{display:none;padding:52px 2rem 80px;background:var(--branco);}
+.tool-section.active{display:block;}
+.tool-inner{max-width:820px;margin:0 auto;}
+.section-label{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--verde-sol);margin-bottom:.4rem;}
+.tool-h{font-family:"Barlow Condensed",sans-serif;font-size:clamp(24px,3vw,36px);font-weight:800;text-transform:uppercase;color:#1a1a1a;margin-bottom:.5rem;}
+.section-desc{color:#6b7f96;font-size:14px;font-weight:300;margin-bottom:2rem;max-width:560px;line-height:1.7;}
+
+.field-group{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem;margin-bottom:1.1rem;}
+.field{display:flex;flex-direction:column;gap:.4rem;}
+label.field-label{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#3d4a5c;}
+label.field-label span{font-weight:400;text-transform:none;letter-spacing:0;font-size:11px;color:#6b7f96;}
+select,input[type=number],input[type=text],input[type=email],input[type=tel],textarea{padding:10px 14px;border:1px solid #d8e2ec;border-radius:3px;font-family:"Barlow",sans-serif;font-size:14px;color:#1a1a1a;background:#fff;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;}
+select:focus,input:focus,textarea:focus{border-color:var(--verde-sol);box-shadow:0 0 0 3px rgba(21,96,56,.08);}
+textarea{resize:vertical;min-height:90px;}
+
+.form-card{background:var(--pag-bg);border:1px solid #d8e2ec;border-radius:4px;padding:1.75rem 2rem;margin-bottom:1rem;}
+.form-card h3{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#1a1a1a;margin-bottom:1.25rem;border-bottom:1px solid #d8e2ec;padding-bottom:.75rem;}
+
+.btn-calc{display:inline-flex;align-items:center;gap:8px;background:var(--verde-sol);color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;padding:12px 26px;border-radius:3px;border:none;cursor:pointer;transition:all .2s;}
+.btn-calc:hover{background:#0d4226;transform:translateY(-1px);}
+.btn-nav{display:inline-flex;align-items:center;gap:8px;background:#2e363e;color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;padding:11px 24px;border-radius:3px;border:none;cursor:pointer;transition:all .2s;}
+.btn-nav:hover{background:#1e252b;}
+.btn-muted{display:inline-flex;align-items:center;background:#d8e2ec;color:#3d4a5c;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;padding:11px 24px;border-radius:3px;border:none;cursor:pointer;transition:all .2s;}
+.btn-muted:hover{background:#c8d4e0;}
+.btn-wh{background:#fff;color:#2e363e;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:12px 26px;border-radius:3px;border:none;cursor:pointer;transition:all .2s;}
+.btn-wh:hover{background:#e8eff6;}
+.btn-ol{border:1.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.85);padding:12px 26px;border-radius:3px;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;background:transparent;cursor:pointer;transition:all .2s;}
+.btn-ol:hover{border-color:#fff;color:#fff;}
+
+/* Calc result */
+.result-box{background:#2e363e;border-radius:4px;padding:2.5rem;margin-top:2rem;display:none;}
+.result-box.show{display:block;animation:fadeUp .4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.result-title{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:1.5rem;letter-spacing:.3px;}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.5rem;}
+.result-card{background:rgba(255,255,255,.07);border-radius:3px;padding:1rem;border:1px solid rgba(255,255,255,.07);}
+.rc-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:4px;}
+.rc-val{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;color:#fff;line-height:1;}
+.rc-sub{font-size:11px;color:rgba(255,255,255,.38);margin-top:2px;}
+.result-pump{background:rgba(21,96,56,.18);border:1px solid rgba(21,96,56,.4);border-radius:3px;padding:1.25rem 1.5rem;margin-bottom:1rem;}
+.result-pump h4{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;color:#7ed4a0;margin-bottom:.75rem;letter-spacing:.5px;}
+.pump-row{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.pump-row:last-child{border:none;}
+.pump-row span:last-child{color:#fff;font-weight:500;}
+.result-note{font-size:11px;color:rgba(255,255,255,.28);margin-top:1rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.06);}
+.result-hes{background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.2);border-radius:3px;padding:1rem 1.25rem;margin-top:.75rem;font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;}
+.result-hes strong{color:var(--sol);}
+.result-hes a{color:var(--sol);}
+.no-match{background:#fff0ee;border:1px solid #f5c0b8;border-radius:3px;padding:1rem 1.25rem;font-size:14px;color:#8b2b1f;display:none;margin-top:1.5rem;}
+.no-match.show{display:block;}
+
+/* Comparador */
+.comp-inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-bottom:1.25rem;}
+.chart-wrap{background:var(--pag-bg);border:1px solid #d8e2ec;border-radius:4px;padding:2rem;margin-top:1.5rem;display:none;}
+.chart-wrap.show{display:block;animation:fadeUp .4s ease;}
+.chart-title{font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:700;text-transform:uppercase;color:#1a1a1a;margin-bottom:1.5rem;}
+.bar-chart{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem;}
+.bar-row{display:grid;grid-template-columns:120px 1fr 90px;align-items:center;gap:12px;}
+.bar-label{color:#6b7f96;text-align:right;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;}
+.bar-track{background:#d8e2ec;border-radius:2px;height:30px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;transition:width .9s cubic-bezier(.34,1.2,.64,1);display:flex;align-items:center;padding-left:10px;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;}
+.bar-fill.solar{background:linear-gradient(90deg,#156038,#2a9d5c);}
+.bar-fill.rede{background:linear-gradient(90deg,#c47a00,var(--sol));}
+.bar-fill.diesel{background:linear-gradient(90deg,#6b5040,#a07050);}
+.bar-val{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;color:#1a1a1a;}
+.summary-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:1.25rem;}
+.sum-card{border-radius:3px;padding:1.25rem;text-align:center;}
+.sum-card.verde{background:var(--verde-sol-bg);border:1px solid var(--verde-sol-border);}
+.sum-card.amarelo{background:var(--sol-claro);border:1px solid #f5d898;}
+.sum-card.cinza-bg{background:var(--pag-bg2);border:1px solid #d8e2ec;}
+.sum-val{font-family:"Barlow Condensed",sans-serif;font-size:26px;font-weight:800;color:#1a1a1a;line-height:1;margin-bottom:3px;}
+.sum-lbl{font-size:11px;color:#6b7f96;}
+.payback-area{background:var(--pag-bg2);border-radius:3px;padding:1.25rem 1.5rem;border:1px solid #d8e2ec;}
+.pb-title{font-family:"Barlow Condensed",sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#6b7f96;margin-bottom:8px;}
+.pb-track{background:#d8e2ec;border-radius:2px;height:8px;overflow:hidden;}
+.pb-fill{height:100%;background:linear-gradient(90deg,#156038,#2a9d5c);border-radius:2px;transition:width 1.1s ease;}
+.pb-labels{display:flex;justify-content:space-between;font-size:11px;color:#a8b8c8;margin-top:5px;}
+
+/* Form multi-step */
+.step-indicator{display:flex;gap:8px;margin-bottom:2rem;align-items:center;}
+.step-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;transition:all .3s;flex-shrink:0;}
+.step-dot.done{background:var(--verde-sol);color:#fff;}
+.step-dot.current{background:#2e363e;color:#fff;}
+.step-dot.pending{background:#d8e2ec;color:#6b7f96;}
+.step-line{flex:1;height:2px;background:#d8e2ec;border-radius:1px;transition:background .3s;}
+.step-line.done{background:var(--verde-sol);}
+.form-step{display:none;}
+.form-step.active{display:block;animation:fadeUp .3s ease;}
+.form-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;}
+.radio-group{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.radio-opt{position:relative;}
+.radio-opt input{position:absolute;opacity:0;width:0;height:0;}
+.radio-opt label{display:flex;align-items:center;gap:6px;padding:8px 16px;border:1px solid #d8e2ec;border-radius:3px;font-size:13px;cursor:pointer;transition:all .15s;background:#fff;color:#6b7f96;font-family:"Barlow",sans-serif;}
+.radio-opt input:checked+label{border-color:var(--verde-sol);background:var(--verde-sol-bg);color:#0d4226;font-weight:500;}
+.checkbox-group{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.check-opt{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid #d8e2ec;border-radius:3px;cursor:pointer;transition:border-color .2s;background:#fff;}
+.check-opt:hover{border-color:var(--verde-sol);}
+.check-opt input{accent-color:var(--verde-sol);width:15px;height:15px;flex-shrink:0;}
+.check-opt span{font-size:13px;color:#6b7f96;}
+.success-box{background:var(--verde-sol-bg);border:1px solid var(--verde-sol-border);border-radius:4px;padding:3rem 2rem;text-align:center;display:none;}
+.success-box.show{display:block;animation:fadeUp .4s ease;}
+.success-box h3{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:700;text-transform:uppercase;color:#0d4226;margin-bottom:.5rem;}
+.success-box p{font-size:14px;color:#2d7a50;max-width:420px;margin:0 auto;}
+
+/* CTA */
+.cta-final{background:#2e363e;padding:4rem 0;}
+.cta-final-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.cta-final-text h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(26px,3.5vw,44px);font-weight:800;color:#fff;text-transform:uppercase;line-height:1.05;letter-spacing:-.5px;margin-bottom:.6rem;}
+.cta-final-text p{font-size:14px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.7;max-width:500px;}
+.cta-final-btns{display:flex;align-items:center;gap:1.25rem;flex-shrink:0;flex-wrap:wrap;}
+.cta-tel{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.85);font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;transition:color .2s;}
+.cta-tel:hover{color:#fff;}
+
+.pvgis-block{margin-top:1.25rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.5rem;}
+.pvgis-title{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#7ed4a0;margin-bottom:1.25rem;}
+.pvgis-month-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:end;height:110px;margin-bottom:.5rem;}
+.pvgis-bar-wrap{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+.pvgis-bar{width:100%;border-radius:2px 2px 0 0;background:linear-gradient(180deg,#7ed4a0,#156038);min-height:3px;transition:height .7s ease;}
+.pvgis-month-lbl{font-size:9px;color:rgba(255,255,255,.3);text-align:center;margin-top:4px;text-transform:uppercase;}
+.pvgis-month-val{font-size:9px;color:rgba(255,255,255,.45);text-align:center;margin-top:1px;}
+.pvgis-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-top:1rem;}
+.pvgis-stat{background:rgba(21,96,56,.2);border:1px solid rgba(21,96,56,.3);border-radius:3px;padding:.9rem 1rem;text-align:center;}
+.pvgis-stat-val{font-family:"Barlow Condensed",sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1;}
+.pvgis-stat-lbl{font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;}
+.pvgis-note{font-size:11px;color:rgba(255,255,255,.25);margin-top:.75rem;line-height:1.5;}
+@media(max-width:900px){.intro-grid{grid-template-columns:1fr;}.intro-visual{display:none;}}
+@media(max-width:600px){
+  .sol-hero h1{font-size:44px;}
+  .hero-stat{padding:.75rem 1.25rem;}
+  .sec{padding:3.5rem 0;}
+  .form-card{padding:1.25rem 1rem;}
+  .result-box{padding:1.5rem 1rem;}
+  .bar-row{grid-template-columns:70px 1fr 65px;}
+  .cta-final-inner{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- 1. HERO -->
+<section class="sol-hero">
+  <div class="sol-hero-badge">&#9728; Bombagem Solar &middot; Drive-Tech&reg;</div>
+  <h1>&Aacute;gua Dispon&iacute;vel, <span class="accent">Sem Conta de Luz</span></h1>
+  <div class="sol-hero-sub">Off-grid &middot; At&eacute; 345 metros &middot; Sem rede el&eacute;trica</div>
+  <p class="sol-hero-desc">O sol bombeia a &aacute;gua enquanto brilha &mdash; sem eletricidade da rede, sem gerador, sem custos de energia. Uma tecnologia simples, fi&aacute;vel e que se paga a si pr&oacute;pria em poucos anos.</p>
+  <div class="sol-hero-btns">
+    <button class="btn-wh" onclick="document.getElementById('oque').scrollIntoView({behavior:'smooth'})">Perceber Como Funciona</button>
+    <button class="btn-ol" onclick="document.getElementById('ferramentas').scrollIntoView({behavior:'smooth'})">Calcular o Meu Sistema &rarr;</button>
+  </div>
+  <div class="sol-hero-stats">
+    <div class="hero-stat"><div class="hero-stat-val">&euro;<span class="unit">0</span></div><div class="hero-stat-lbl">Custo de energia / ano</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">345<span class="unit">m</span></div><div class="hero-stat-lbl">Profundidade m&aacute;xima</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">24<span class="unit">m&sup3;/h</span></div><div class="hero-stat-lbl">Caudal m&aacute;ximo</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">3&ndash;6<span class="unit">anos</span></div><div class="hero-stat-lbl">Retorno t&iacute;pico</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">25<span class="unit">+</span></div><div class="hero-stat-lbl">Anos de vida &uacute;til</div></div>
+  </div>
+</section>
+
+<!-- 2. O QUE E / COMO FUNCIONA -->
+<section class="sec intro-sec" id="oque">
+  <div class="sec-inner">
+    <div class="intro-grid">
+      <div class="intro-text"></div>
+      <div class="intro-visual">
+        <div class="flow-step"><div class="flow-num">1</div><div class="flow-text"><h4>Pain&eacute;is Fotovoltaicos</h4><p>Captam a radia&ccedil;&atilde;o solar e produzem eletricidade DC. Sem pe&ccedil;as m&oacute;veis, sem manuten&ccedil;&atilde;o especial.</p></div></div>
+        <div class="flow-step"><div class="flow-num">2</div><div class="flow-text"><h4>Inversor Drive-Tech&reg;</h4><p>Recebe e converte a energia DC dos pain&eacute;is para alimentar a bomba. Controlo por app no telemovel via Bluetooth ou no painel integrado. Pode ser alimentado por pain&eacute;is e por rede el&eacute;trica, gerador, etc. &mdash; o que permite satisfazer casos em que seja necess&aacute;rio trabalho de dia e de noite.</p></div></div>
+        <div class="flow-step"><div class="flow-num">3</div><div class="flow-text"><h4>Eletrobomba</h4><p>Bomba de &aacute;gua submers&iacute;vel ou de superf&iacute;cie, escolhida mediante os dados hidr&aacute;ulicos necess&aacute;rios. Praticamente todo o nosso <a href="produtos/index.html" style="color:#7ed4a0;text-decoration:underline">cat&aacute;logo</a> pode ser alimentado a energia solar.</p></div></div>
+        <div class="flow-step"><div class="flow-num">4</div><div class="flow-text"><h4>Destino Final</h4><p>Rega, bebedouros, habita&ccedil;&atilde;o. A &aacute;gua chega onde &eacute; precisa, quando &eacute; precisa &mdash; sem custo de energia.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. VANTAGENS -->
+<section class="sec vant-sec">
+  <div class="sec-inner">
+    <div class="eyebrow">Porqu&ecirc; escolher solar</div>
+    <h2 class="sec-h">As 6 Vantagens<br>da Bombagem Solar</h2>
+    <p class="sec-p" style="margin-bottom:0">N&atilde;o &eacute; apenas ecol&oacute;gico &mdash; em muitos casos &eacute; a solu&ccedil;&atilde;o mais econ&oacute;mica, especialmente em zonas rurais ou sem rede el&eacute;trica pr&oacute;xima.</p>
+    <div class="vant-grid">
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><h3>Custo de Energia Zero</h3><p>Ap&oacute;s a instala&ccedil;&atilde;o, o &ldquo;combust&iacute;vel&rdquo; &eacute; gratuito. Sem fatura de eletricidade, sem diesel. O investimento amortiza-se em 3 a 6 anos &mdash; e depois s&atilde;o 20+ anos de funcionamento praticamente gratuito.</p></div>
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><h3>Manuten&ccedil;&atilde;o M&iacute;nima</h3><p>Os pain&eacute;is n&atilde;o t&ecirc;m pe&ccedil;as m&oacute;veis &mdash; apenas necessitam de limpeza ocasional. A bomba submerss&iacute;vel tem uma revis&atilde;o anual, como qualquer bomba convencional. Sem avarias de motor a diesel.</p></div>
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Funciona Sem Rede El&eacute;trica</h3><p>Ideal para herdades, montes e quintas isoladas onde ligar &agrave; rede seria caro ou imposs&iacute;vel. Sem cabos de alta tens&atilde;o, sem transformadores, sem obras de infraestrutura el&eacute;trica.</p></div>
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>100% Renov&aacute;vel</h3><p>Sem emiss&otilde;es de CO&sup2;, sem ru&iacute;do, sem combust&iacute;veis f&oacute;sseis. Compat&iacute;vel com apoios do PDR2020 e outras linhas de financiamento agr&iacute;cola que exigem sustentabilidade ambiental.</p></div>
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div><h3>Sincronizado com o Uso</h3><p>O sistema produz mais energia quando o sol est&aacute; mais forte &mdash; exatamente quando a rega e o consumo de &aacute;gua s&atilde;o maiores no ver&atilde;o. Uma coincid&ecirc;ncia natural que trabalha a seu favor.</p></div>
+      <div class="vant-card"><div class="vant-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3>Valoriza a Propriedade</h3><p>Uma propriedade rural com sistema de bombagem solar aut&oacute;nomo tem maior valor de mercado e maior independ&ecirc;ncia h&iacute;drica. Um ativo cada vez mais valorizado em Portugal.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- 7. FERRAMENTAS -->
+<section id="ferramentas">
+  <div class="tools-intro-band">
+    <div class="eyebrow" style="color:rgba(255,255,255,.4)">Ferramentas Online</div>
+    <h2 class="sec-h light">Pronto para Dimensionar?</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.45);font-weight:300;max-width:500px;margin:0 auto;">Use as ferramentas abaixo &mdash; com dados reais das fichas t&eacute;cnicas ALANOL &mdash; para calcular, comparar e pedir or&ccedil;amento.</p>
+  </div>
+
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="showTab('calc',this)">&#128296; Calculadora de Sistema</button>
+    <button class="tab-btn" onclick="showTab('comp',this)">&#128202; Comparador de Custos</button>
+    <button class="tab-btn" onclick="showTab('form',this)">&#128203; Pedir Or&ccedil;amento</button>
+  </nav>
+
+  <!-- CALCULADORA -->
+  <div class="tool-section active" id="calc">
+    <div class="tool-inner">
+      <div class="section-label">Ferramenta 1</div>
+      <div class="tool-h">Calculadora de Dimensionamento</div>
+      <p class="section-desc">Indique as caracter&iacute;sticas do seu projeto. O sistema recomenda a bomba e inversor ALANOL certos, com dados reais das fichas t&eacute;cnicas.</p>
+      <div class="form-card">
+        <h3>&#127754; Necessidades de &Aacute;gua</h3>
+        <div class="field-group">
+          <div class="field"><label class="field-label">Caudal necess&aacute;rio <span>(m&sup3;/hora)</span></label><input type="number" id="caudal" min="0.3" max="24" step="0.1" value="2" placeholder="ex: 2.5"></div>
+          <div class="field"><label class="field-label">Profundidade do furo <span>(metros)</span></label><input type="number" id="profundidade" min="5" max="350" step="5" value="40" placeholder="ex: 60"></div>
+          <div class="field"><label class="field-label">Altura adicional acima do solo <span>(metros)</span></label><input type="number" id="alturaExtra" min="0" max="50" step="1" value="0" placeholder="ex: 10"></div>
+          <div class="field"><label class="field-label">Perdas de carga <span>(m &mdash; deixe 10 se n&atilde;o sabe)</span></label><input type="number" id="perdasCarga" min="0" max="50" step="1" value="10" placeholder="10"></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>&#9889; Prefer&ecirc;ncias</h3>
+        <div class="field-group">
+          <div class="field"><label class="field-label">Tens&atilde;o dispon&iacute;vel no local</label><select id="tensao"><option value="mono">Monof&aacute;sica 230V (ou s&oacute; solar)</option><option value="tri">Trif&aacute;sica 380V dispon&iacute;vel</option></select></div>
+          <div class="field"><label class="field-label">Interesse em HES <span>(at&eacute; 50% menos pain&eacute;is)</span></label><select id="hes"><option value="sim">Sim, quero saber mais sobre HES</option><option value="nao">N&atilde;o, sistema convencional</option></select></div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>&#127759; Localiza&ccedil;&atilde;o do Projeto <span style="font-size:12px;font-weight:400;text-transform:none;color:var(--cinza);letter-spacing:0">&mdash; para simula&ccedil;&atilde;o solar real (PVGIS)</span></h3>
+        <div class="field-group">
+          <div class="field" style="grid-column:1/-1">
+            <label class="field-label">Localidade ou morada <span>(ex: Évora, Alentejo)</span></label>
+            <div style="display:flex;gap:.6rem">
+              <input type="text" id="localidade" placeholder="Ex: Évora, Beja, Faro..." style="flex:1">
+              <button class="btn-calc" onclick="geocodificar()" id="btnGeo" style="white-space:nowrap;padding:10px 18px">Localizar &#8594;</button>
+              <button class="btn-muted" onclick="usarGeolocalizacao()" id="btnGps" style="padding:10px 14px" title="Usar a minha localiza&ccedil;&atilde;o">&#128205;</button>
+            </div>
+          </div>
+        </div>
+        <div id="pvgisStatus" style="display:none;font-size:13px;color:#6b7f96;margin-top:.5rem;padding:.6rem 1rem;background:var(--pag-bg2);border-radius:3px"></div>
+      </div>
+      <button class="btn-calc" onclick="calcular()">Calcular Sistema Recomendado &rarr;</button>
+      <div class="result-box" id="resultBox">
+        <div class="result-title">&#9989; Sistema Recomendado &mdash; ALANOL</div>
+        <div class="result-grid" id="resultGrid"></div>
+        <div id="resultPumps"></div>
+        <div id="resultHes"></div>
+        <div id="pvgisResult"></div>
+        <p class="result-note">Valores indicativos baseados nas fichas t&eacute;cnicas ALANOL. O dimensionamento final deve ser validado por t&eacute;cnico especializado. Contacte-nos para confirma&ccedil;&atilde;o e or&ccedil;amento detalhado.</p>
+      </div>
+      <div class="no-match" id="noMatch">&#9888; N&atilde;o foi encontrada uma bomba F4 para esta combina&ccedil;&atilde;o de caudal e altura manom&eacute;trica. Contacte-nos &mdash; temos outras gamas e solu&ccedil;&otilde;es especiais por medida.</div>
+    </div>
+  </div>
+
+  <!-- COMPARADOR -->
+  <div class="tool-section" id="comp">
+    <div class="tool-inner">
+      <div class="section-label">Ferramenta 2</div>
+      <div class="tool-h">Comparador de Custos</div>
+      <p class="section-desc">Compare o custo de opera&ccedil;&atilde;o a 10 anos entre bombagem solar, eletricidade da rede e gerador a diesel. Custos de instala&ccedil;&atilde;o exclu&iacute;dos.</p>
+      <div class="form-card">
+        <h3>&#9881; Par&acirc;metros do Sistema</h3>
+        <div class="comp-inputs">
+          <div class="field"><label class="field-label">Pot&ecirc;ncia da bomba <span>(kW)</span></label><select id="cPotencia"><option value="0.25">0,25 kW</option><option value="0.37">0,37 kW</option><option value="0.55">0,55 kW</option><option value="0.75">0,75 kW</option><option value="1.1" selected>1,1 kW</option><option value="1.5">1,5 kW</option><option value="2.2">2,2 kW</option><option value="3">3 kW</option><option value="4">4 kW</option><option value="5.5">5,5 kW</option><option value="7.5">7,5 kW</option></select></div>
+          <div class="field"><label class="field-label">Horas de bombeamento / dia</label><select id="cHoras"><option value="4">4 h/dia</option><option value="6" selected>6 h/dia</option><option value="8">8 h/dia</option><option value="10">10 h/dia</option></select></div>
+          <div class="field"><label class="field-label">Meses de uso por ano</label><select id="cMeses"><option value="4">4 meses</option><option value="6">6 meses</option><option value="8" selected>8 meses</option><option value="12">12 meses</option></select></div>
+          <div class="field"><label class="field-label">Tarifa el&eacute;trica <span>(&euro;/kWh)</span></label><input type="number" id="cTarifa" value="0.16" min="0.10" max="0.50" step="0.01"></div>
+        </div>
+        <button class="btn-calc" onclick="comparar()">Comparar Custos a 10 Anos &rarr;</button>
+      </div>
+      <div class="chart-wrap" id="chartWrap">
+        <div class="chart-title">&#128182; Custo de Opera&ccedil;&atilde;o Estimado em 10 Anos</div>
+        <div class="bar-chart" id="barChart"></div>
+        <div class="summary-cards" id="summaryCards"></div>
+        <div class="payback-area" id="paybackArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORCAMENTO -->
+  <div class="tool-section" id="form">
+    <div class="tool-inner">
+      <div class="section-label">Ferramenta 3</div>
+      <div class="tool-h">Pedir Or&ccedil;amento</div>
+      <p class="section-desc">Preencha em 3 passos e a nossa equipa t&eacute;cnica responde com proposta personalizada em menos de 24 horas.</p>
+      <div class="step-indicator">
+        <div class="step-dot current" id="sdot1">1</div><div class="step-line" id="sline1"></div>
+        <div class="step-dot pending" id="sdot2">2</div><div class="step-line" id="sline2"></div>
+        <div class="step-dot pending" id="sdot3">3</div>
+      </div>
+      <!-- Passo 1 -->
+      <div class="form-step active" id="step1">
+        <div class="form-card">
+          <h3>&#128205; O Seu Projeto</h3>
+          <div class="field-group">
+            <div class="field"><label class="field-label">Caudal necess&aacute;rio <span>(m&sup3;/h)</span></label><input type="number" id="f_caudal" placeholder="ex: 3" min="0" max="30"></div>
+            <div class="field"><label class="field-label">Profundidade do furo <span>(metros)</span></label><input type="number" id="f_profundidade" placeholder="ex: 50" min="0" max="400"></div>
+          </div>
+          <div class="field" style="margin-bottom:1.1rem">
+            <label class="field-label">Aplica&ccedil;&atilde;o principal</label>
+            <div class="radio-group">
+              <div class="radio-opt"><input type="radio" name="faplicacao" id="fa1" value="Rega agr&iacute;cola" checked><label for="fa1">&#127807; Rega agr&iacute;cola</label></div>
+              <div class="radio-opt"><input type="radio" name="faplicacao" id="fa2" value="Abastecimento dom&eacute;stico"><label for="fa2">&#127968; Dom&eacute;stico</label></div>
+              <div class="radio-opt"><input type="radio" name="faplicacao" id="fa3" value="Pecu&aacute;ria"><label for="fa3">&#128004; Pecu&aacute;ria</label></div>
+              <div class="radio-opt"><input type="radio" name="faplicacao" id="fa4" value="Industrial"><label for="fa4">&#127981; Industrial</label></div>
+              <div class="radio-opt"><input type="radio" name="faplicacao" id="fa5" value="Outro"><label for="fa5">&#10067; Outro</label></div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Alimenta&ccedil;&atilde;o dispon&iacute;vel</label>
+            <div class="radio-group">
+              <div class="radio-opt"><input type="radio" name="falimentacao" id="fal1" value="Sem rede" checked><label for="fal1">&#9728; Sem rede el&eacute;trica</label></div>
+              <div class="radio-opt"><input type="radio" name="falimentacao" id="fal2" value="Monof&aacute;sica 230V"><label for="fal2">&#9889; Monof&aacute;sica</label></div>
+              <div class="radio-opt"><input type="radio" name="falimentacao" id="fal3" value="Trif&aacute;sica 380V"><label for="fal3">&#9889;&#9889; Trif&aacute;sica</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav"><span style="font-size:12px;color:#6b7f96;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.3px">Passo 1 / 3</span><button class="btn-nav" onclick="nextStep(2)">Seguinte &rarr;</button></div>
+      </div>
+      <!-- Passo 2 -->
+      <div class="form-step" id="step2">
+        <div class="form-card">
+          <h3>&#9881; O Que Pretende Or&ccedil;amentar</h3>
+          <div class="field" style="margin-bottom:1.1rem">
+            <label class="field-label">Componentes a incluir</label>
+            <div class="checkbox-group">
+              <label class="check-opt"><input type="checkbox" id="inc_bomba" checked><span>&#128299; Eletrobomba de furo s&eacute;rie F4 (Inox AISI 304)</span></label>
+              <label class="check-opt"><input type="checkbox" id="inc_inversor" checked><span>&#9889; Inversor solar Drive-Tech&reg; (MINI ou Compact)</span></label>
+              <label class="check-opt"><input type="checkbox" id="inc_paineis"><span>&#9728; Pain&eacute;is fotovoltaicos</span></label>
+              <label class="check-opt"><input type="checkbox" id="inc_reservatorio"><span>&#128167; Reservat&oacute;rio / dep&oacute;sito de press&atilde;o INOX</span></label>
+              <label class="check-opt"><input type="checkbox" id="inc_hes"><span>&#128267; Motor alta efici&ecirc;ncia HES Franklin Electric</span></label>
+              <label class="check-opt"><input type="checkbox" id="inc_instalacao"><span>&#128295; Instala&ccedil;&atilde;o e m&atilde;o-de-obra</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Situa&ccedil;&atilde;o atual</label>
+            <div class="radio-group">
+              <div class="radio-opt"><input type="radio" name="fbe" id="fbe1" value="Nova instala&ccedil;&atilde;o" checked><label for="fbe1">Nova instala&ccedil;&atilde;o</label></div>
+              <div class="radio-opt"><input type="radio" name="fbe" id="fbe2" value="Substituir bomba"><label for="fbe2">Substituir bomba existente</label></div>
+              <div class="radio-opt"><input type="radio" name="fbe" id="fbe3" value="Adicionar solar"><label for="fbe3">Adicionar solar &agrave; bomba atual</label></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-nav"><button class="btn-muted" onclick="nextStep(1)">&larr; Anterior</button><button class="btn-nav" onclick="nextStep(3)">Seguinte &rarr;</button></div>
+      </div>
+      <!-- Passo 3 -->
+      <div class="form-step" id="step3">
+        <div class="form-card">
+          <h3>&#128100; Dados de Contacto</h3>
+          <div class="field-group">
+            <div class="field"><label class="field-label">Nome completo</label><input type="text" id="f_nome" placeholder="Jo&atilde;o Silva"></div>
+            <div class="field"><label class="field-label">Empresa <span>(opcional)</span></label><input type="text" id="f_empresa" placeholder="Quinta do Vale"></div>
+          </div>
+          <div class="field-group">
+            <div class="field"><label class="field-label">Email</label><input type="email" id="f_email" placeholder="joao@email.pt"></div>
+            <div class="field"><label class="field-label">Telemovel</label><input type="tel" id="f_telefone" placeholder="912 345 678"></div>
+          </div>
+          <div class="field-group">
+            <div class="field"><label class="field-label">Localiza&ccedil;&atilde;o do projeto <span>(distrito / concelho)</span></label><input type="text" id="f_local" placeholder="&Eacute;vora &mdash; Reguengos de Monsaraz"></div>
+          </div>
+          <div class="field"><label class="field-label">Observa&ccedil;&otilde;es</label><textarea id="f_obs" placeholder="Ex: Furo de 80m j&aacute; existente, sem rede el&eacute;trica, necessito regar 5 ha de olival..."></textarea></div>
+        </div>
+        <div class="form-nav"><button class="btn-muted" onclick="nextStep(2)">&larr; Anterior</button><button class="btn-calc" onclick="submitForm()">Enviar Pedido de Or&ccedil;amento &rarr;</button></div>
+      </div>
+      <div class="success-box" id="successBox">
+        <div style="font-size:2.5rem;margin-bottom:1rem">&#9989;</div>
+        <h3>Pedido Enviado!</h3>
+        <p>A nossa equipa t&eacute;cnica ir&aacute; analisar o seu projeto e responder em menos de 24 horas com uma proposta personalizada.</p>
+        <br><p style="font-size:13px;color:#6b7f96">&#128222; +351 253 501 414 &nbsp;&middot;&nbsp; &#9993; alanol@alanol.pt &nbsp;&middot;&nbsp; &#128172; WhatsApp dispon&iacute;vel</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <div class="cta-final-text">
+      <h2>Tem d&uacute;vidas?<br>Fale com um t&eacute;cnico</h2>
+      <p>A nossa equipa dimensiona gratuitamente o sistema ideal para o seu projeto &mdash; furo, caudal, inversor e pain&eacute;is. Resposta em menos de 24 horas.</p>
+    </div>
+    <div class="cta-final-btns">
+      <button class="btn-wh" onclick="document.getElementById('ferramentas').scrollIntoView({behavior:'smooth'});showTab('form',document.querySelectorAll('.tab-btn')[2])">Pedir Or&ccedil;amento Online</button>
+      <a href="tel:+351253501414" class="cta-tel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.69A2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +351 253 501 414
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+// MODELOS: cada modelo tem curva real [q_m3h, h_mca] da ficha tecnica
+// q = caudais em m3/h, h = alturas correspondentes
+// Usados para encontrar o modelo cujo ponto de trabalho fica mais centrado na curva
+const MODELOS=[
+  // SERIE C — caudal max 2.5 m3/h
+  {id:'FM-10C',serie:'C',pot:0.25,curva:[[0,58],[0.3,52],[0.6,48],[0.9,42],[1.2,36],[1.5,30],[1.8,22],[2.1,15],[2.4,11]]},
+  {id:'FM-14C / FT-14C',serie:'C',pot:0.37,curva:[[0,77],[0.3,72],[0.6,67],[0.9,59],[1.2,50],[1.5,41],[1.8,31],[2.1,21],[2.4,14]]},
+  {id:'FM-17C / FT-17C',serie:'C',pot:0.55,curva:[[0,86],[0.3,85],[0.6,81],[0.9,73],[1.2,67],[1.5,58],[1.8,45],[2.1,32],[2.4,22]]},
+  {id:'FM-21C / FT-21C',serie:'C',pot:0.55,curva:[[0,106],[0.3,101],[0.6,94],[0.9,86],[1.2,77],[1.5,67],[1.8,52],[2.1,37],[2.4,26]]},
+  {id:'FM-28C / FT-28C',serie:'C',pot:0.75,curva:[[0,141],[0.3,139],[0.6,132],[0.9,119],[1.2,103],[1.5,87],[1.8,68],[2.1,47],[2.4,33]]},
+  {id:'FM-35C / FT-35C',serie:'C',pot:1.1,curva:[[0,187],[0.3,175],[0.6,166],[0.9,150],[1.2,132],[1.5,113],[1.8,88],[2.1,66],[2.4,40]]},
+  {id:'FM-42C / FT-42C',serie:'C',pot:1.5,curva:[[0,223],[0.3,210],[0.6,200],[0.9,182],[1.2,163],[1.5,140],[1.8,112],[2.1,83],[2.4,48]]},
+  {id:'FM-50C / FT-50C',serie:'C',pot:1.5,curva:[[0,252],[0.3,243],[0.6,229],[0.9,208],[1.2,185],[1.5,160],[1.8,128],[2.1,95],[2.4,58]]},
+  // SERIE D — caudal max 3.6 m3/h
+  {id:'FM-7D',serie:'D',pot:0.25,curva:[[0,43],[0.3,41],[0.6,39],[0.9,38],[1.2,37],[1.5,34],[1.8,31],[2.1,29],[2.4,25],[2.7,21],[3.0,16],[3.3,10],[3.6,4]]},
+  {id:'FM-10D / FT-10D',serie:'D',pot:0.37,curva:[[0,56],[0.3,53],[0.6,52],[0.9,51],[1.2,50],[1.5,47],[1.8,43],[2.1,39],[2.4,33],[2.7,28],[3.0,20],[3.3,13],[3.6,5]]},
+  {id:'FM-14D / FT-14D',serie:'D',pot:0.55,curva:[[0,79],[0.3,76],[0.6,74],[0.9,72],[1.2,70],[1.5,64],[1.8,60],[2.1,52],[2.4,45],[2.7,37],[3.0,28],[3.3,17],[3.6,6]]},
+  {id:'FM-18D / FT-18D',serie:'D',pot:0.75,curva:[[0,101],[0.3,99],[0.6,95],[0.9,92],[1.2,89],[1.5,84],[1.8,79],[2.1,70],[2.4,60],[2.7,49],[3.0,37],[3.3,21],[3.6,7]]},
+  {id:'FM-25D / FT-25D',serie:'D',pot:1.1,curva:[[0,140],[0.3,139],[0.6,135],[0.9,131],[1.2,128],[1.5,120],[1.8,110],[2.1,99],[2.4,87],[2.7,70],[3.0,52],[3.3,32],[3.6,9]]},
+  {id:'FM-34D / FT-34D',serie:'D',pot:1.5,curva:[[0,198],[0.3,186],[0.6,182],[0.9,176],[1.2,169],[1.5,158],[1.8,147],[2.1,132],[2.4,115],[2.7,94],[3.0,70],[3.3,42],[3.6,11]]},
+  {id:'FM-40D / FT-40D',serie:'D',pot:2.2,curva:[[0,238],[0.3,230],[0.6,221],[0.9,214],[1.2,205],[1.5,195],[1.8,180],[2.1,158],[2.4,139],[2.7,102],[3.0,81],[3.3,52],[3.6,12]]},
+  {id:'FM-47D / FT-47D',serie:'D',pot:2.2,curva:[[0,263],[0.3,257],[0.6,252],[0.9,243],[1.2,232],[1.5,220],[1.8,203],[2.1,183],[2.4,160],[2.7,141],[3.0,100],[3.3,60],[3.6,15]]},
+  {id:'FT-60D',serie:'D',pot:3,curva:[[0,345],[0.3,330],[0.6,321],[0.9,310],[1.2,296],[1.5,279],[1.8,259],[2.1,234],[2.4,205],[2.7,173],[3.0,131],[3.3,81],[3.6,18]]},
+  // SERIE E — caudal max 6.6 m3/h
+  {id:'FM-5E / FT-5E',serie:'E',pot:0.37,curva:[[0,35],[0.6,33],[1.2,31],[1.8,30],[2.4,28],[3.0,26],[3.6,23],[4.2,20],[4.8,17],[5.4,13],[6.0,10],[6.6,6]]},
+  {id:'FM-7E / FT-7E',serie:'E',pot:0.55,curva:[[0,48],[0.6,46],[1.2,45],[1.8,42],[2.4,40],[3.0,37],[3.6,33],[4.2,29],[4.8,25],[5.4,20],[6.0,14],[6.6,7]]},
+  {id:'FM-10E / FT-10E',serie:'E',pot:0.75,curva:[[0,65],[0.6,62],[1.2,59],[1.8,57],[2.4,52],[3.0,49],[3.6,44],[4.2,38],[4.8,32],[5.4,25],[6.0,18],[6.6,10]]},
+  {id:'FM-15E / FT-15E',serie:'E',pot:1.1,curva:[[0,98],[0.6,96],[1.2,93],[1.8,89],[2.4,84],[3.0,78],[3.6,70],[4.2,60],[4.8,50],[5.4,38],[6.0,25],[6.6,13]]},
+  {id:'FM-20E / FT-20E',serie:'E',pot:1.5,curva:[[0,130],[0.6,129],[1.2,125],[1.8,122],[2.4,113],[3.0,104],[3.6,92],[4.2,79],[4.8,66],[5.4,50],[6.0,32],[6.6,15]]},
+  {id:'FM-26E / FT-26E',serie:'E',pot:2.2,curva:[[0,164],[0.6,160],[1.2,153],[1.8,148],[2.4,133],[3.0,124],[3.6,111],[4.2,98],[4.8,87],[5.4,70],[6.0,41],[6.6,20]]},
+  {id:'FM-32E / FT-32E',serie:'E',pot:2.2,curva:[[0,202],[0.6,197],[1.2,187],[1.8,175],[2.4,162],[3.0,148],[3.6,131],[4.2,113],[4.8,93],[5.4,71],[6.0,48],[6.6,25]]},
+  {id:'FT-39E',serie:'E',pot:3,curva:[[0,241],[0.6,239],[1.2,228],[1.8,216],[2.4,202],[3.0,185],[3.6,167],[4.2,147],[4.8,123],[5.4,98],[6.0,68],[6.6,35]]},
+  {id:'FT-48E',serie:'E',pot:4,curva:[[0,297],[0.6,288],[1.2,276],[1.8,261],[2.4,245],[3.0,227],[3.6,205],[4.2,182],[4.8,154],[5.4,125],[6.0,90],[6.6,50]]},
+  // SERIE F — caudal max 9 m3/h
+  {id:'FM-5F / FT-5F',serie:'F',pot:0.55,curva:[[0,34],[0.6,32],[1.2,31],[1.8,30],[2.4,29],[3.0,28],[4.5,24],[6.0,19],[7.5,13],[9.0,6]]},
+  {id:'FM-7F / FT-7F',serie:'F',pot:0.75,curva:[[0,45],[0.6,43],[1.2,42],[1.8,41],[2.4,40],[3.0,39],[4.5,34],[6.0,28],[7.5,19],[9.0,9]]},
+  {id:'FM-10F / FT-10F',serie:'F',pot:1.1,curva:[[0,65],[0.6,62],[1.2,61],[1.8,59],[2.4,58],[3.0,56],[4.5,49],[6.0,39],[7.5,25],[9.0,11]]},
+  {id:'FM-14F / FT-14F',serie:'F',pot:1.5,curva:[[0,90],[0.6,84],[1.2,83],[1.8,81],[2.4,78],[3.0,75],[4.5,66],[6.0,53],[7.5,34],[9.0,14]]},
+  {id:'FM-21F / FT-21F',serie:'F',pot:2.2,curva:[[0,131],[0.6,127],[1.2,124],[1.8,120],[2.4,116],[3.0,112],[4.5,100],[6.0,79],[7.5,55],[9.0,26]]},
+  {id:'FT-27F',serie:'F',pot:3,curva:[[0,170],[0.6,167],[1.2,164],[1.8,160],[2.4,155],[3.0,149],[4.5,130],[6.0,104],[7.5,70],[9.0,32]]},
+  {id:'FT-34F',serie:'F',pot:4,curva:[[0,211],[0.6,205],[1.2,202],[1.8,198],[2.4,193],[3.0,186],[4.5,165],[6.0,131],[7.5,88],[9.0,40]]},
+  {id:'FT-46F',serie:'F',pot:5.5,curva:[[0,282],[0.6,277],[1.2,268],[1.8,260],[2.4,250],[3.0,240],[4.5,208],[6.0,170],[7.5,123],[9.0,60]]},
+  // SERIE G — caudal max 12.6 m3/h
+  {id:'FM-5G / FT-5G',serie:'G',pot:0.75,curva:[[0,45],[0.6,43],[1.8,41],[3.6,35],[5.4,30],[7.2,24],[9.0,19],[10.8,12],[12.6,7]]},
+  {id:'FM-7G / FT-7G',serie:'G',pot:1.1,curva:[[0,56],[0.6,54],[1.8,51],[3.6,46],[5.4,40],[7.2,33],[9.0,26],[10.8,17],[12.6,8]]},
+  {id:'FM-10G / FT-10G',serie:'G',pot:1.5,curva:[[0,76],[0.6,74],[1.8,71],[3.6,66],[5.4,59],[7.2,50],[9.0,40],[10.8,28],[12.6,13]]},
+  {id:'FM-14G / FT-14G',serie:'G',pot:2.2,curva:[[0,95],[0.6,93],[1.8,91],[3.6,85],[5.4,77],[7.2,66],[9.0,51],[10.8,34],[12.6,15]]},
+  {id:'FT-18G',serie:'G',pot:3,curva:[[0,130],[0.6,127],[1.8,121],[3.6,111],[5.4,99],[7.2,84],[9.0,67],[10.8,44],[12.6,19]]},
+  {id:'FT-24G',serie:'G',pot:4,curva:[[0,170],[0.6,168],[1.8,161],[3.6,149],[5.4,132],[7.2,112],[9.0,89],[10.8,61],[12.6,28]]},
+  {id:'FT-33G',serie:'G',pot:5.5,curva:[[0,224],[0.6,222],[1.8,212],[3.6,193],[5.4,171],[7.2,144],[9.0,113],[10.8,77],[12.6,35]]},
+  {id:'FT-43G',serie:'G',pot:7.5,curva:[[0,298],[0.6,289],[1.8,273],[3.6,247],[5.4,216],[7.2,180],[9.0,140],[10.8,94],[12.6,40]]},
+  // SERIE H — caudal max 16.8 m3/h
+  {id:'FM-7H / FT-7H',serie:'H',pot:1.5,curva:[[0,56],[1.2,54],[2.4,52],[4.8,46],[7.2,40],[9.6,34],[12.0,26],[14.4,19],[16.8,11]]},
+  {id:'FM-11H / FT-11H',serie:'H',pot:2.2,curva:[[0,78],[1.2,75],[2.4,72],[4.8,63],[7.2,54],[9.6,44],[12.0,33],[14.4,22],[16.8,12]]},
+  {id:'FT-13H',serie:'H',pot:3,curva:[[0,96],[1.2,95],[2.4,91],[4.8,84],[7.2,75],[9.6,63],[12.0,49],[14.4,32],[16.8,13]]},
+  {id:'FT-18H',serie:'H',pot:4,curva:[[0,128],[1.2,126],[2.4,122],[4.8,113],[7.2,102],[9.6,86],[12.0,68],[14.4,46],[16.8,22]]},
+  {id:'FT-25H',serie:'H',pot:5.5,curva:[[0,170],[1.2,165],[2.4,162],[4.8,153],[7.2,136],[9.6,122],[12.0,98],[14.4,68],[16.8,33]]},
+  {id:'FT-34H',serie:'H',pot:7.5,curva:[[0,230],[1.2,228],[2.4,224],[4.8,207],[7.2,187],[9.6,161],[12.0,128],[14.4,89],[16.8,39]]},
+  // SERIE I — caudal max 24 m3/h
+  {id:'FM-7I / FT-7I',serie:'I',pot:1.5,curva:[[0,42],[3.0,39],[6.0,34],[9.0,30],[12.0,26],[15.0,21],[18.0,17],[21.0,12],[24.0,4]]},
+  {id:'FM-10I / FT-10I',serie:'I',pot:2.2,curva:[[0,62],[3.0,60],[6.0,53],[9.0,46],[12.0,39],[15.0,31],[18.0,23],[21.0,15],[24.0,6]]},
+  {id:'FT-13I',serie:'I',pot:3,curva:[[0,78],[3.0,70],[6.0,63],[9.0,56],[12.0,48],[15.0,40],[18.0,31],[21.0,21],[24.0,10]]},
+  {id:'FT-18I',serie:'I',pot:4,curva:[[0,102],[3.0,100],[6.0,90],[9.0,79],[12.0,67],[15.0,54],[18.0,41],[21.0,26],[24.0,11]]},
+  {id:'FT-26I',serie:'I',pot:5.5,curva:[[0,152],[3.0,140],[6.0,126],[9.0,111],[12.0,94],[15.0,75],[18.0,55],[21.0,34],[24.0,12]]},
+  {id:'FT-33I',serie:'I',pot:7.5,curva:[[0,192],[3.0,190],[6.0,171],[9.0,149],[12.0,126],[15.0,102],[18.0,76],[21.0,49],[24.0,20]]},
+];
+
+// Interpolar altura na curva para um dado caudal
+function alturaEmCurva(curva,q){
+  if(q<=curva[0][0]) return curva[0][1];
+  if(q>=curva[curva.length-1][0]) return curva[curva.length-1][1];
+  for(var i=0;i<curva.length-1;i++){
+    if(q>=curva[i][0]&&q<=curva[i+1][0]){
+      var t=(q-curva[i][0])/(curva[i+1][0]-curva[i][0]);
+      return curva[i][1]+t*(curva[i+1][1]-curva[i][1]);
+    }
+  }
+  return 0;
+}
+
+// Seleccionar o melhor modelo: deve conseguir o ponto de trabalho (q,H)
+// e o ponto de trabalho deve ficar o mais centrado possivel na curva
+// (nem no limite superior nem no limite inferior)
+// Em caso de empate, menor potencia
+function seleccionarModelo(q,H){
+  var candidatos=MODELOS.filter(function(m){
+    var hMax=m.curva[0][1]; // altura a caudal zero
+    var qMax=m.curva[m.curva.length-1][0]; // caudal maximo
+    var hNoQ=alturaEmCurva(m.curva,q); // altura disponivel no caudal pedido
+    return qMax>=q && hNoQ>=H;
+  });
+  if(!candidatos.length) return null;
+  // Seleccionar o modelo cujo ponto de trabalho usa a maior percentagem da curva
+  // (H_pedida / H_disponivel o mais proximo de 1.0)
+  // Penalizar modelos com caudal muito acima do necessario (factor caudal)
+  // Em empate (<5% diferenca), preferir menor potencia
+  candidatos.sort(function(a,b){
+    var hA=alturaEmCurva(a.curva,q);
+    var hB=alturaEmCurva(b.curva,q);
+    var ratioA=H/hA;
+    var ratioB=H/hB;
+    // Penalizar se caudal max da curva for mais do dobro do necessario
+    var qMaxA=a.curva[a.curva.length-1][0];
+    var qMaxB=b.curva[b.curva.length-1][0];
+    var penA=qMaxA>q*2.5?1+(qMaxA/q-2.5)*0.15:0;
+    var penB=qMaxB>q*2.5?1+(qMaxB/q-2.5)*0.15:0;
+    var scoreA=Math.abs(ratioA-1)+penA;
+    var scoreB=Math.abs(ratioB-1)+penB;
+    if(Math.abs(scoreA-scoreB)<0.05) return a.pot-b.pot;
+    return scoreA-scoreB;
+  });
+  return candidatos[0];
+}
+
+// Manter SERIES apenas para compatibilidade com o no-match check
+const SERIES=[
+  {caudalMax:2.5,alturaMax:252},
+  {caudalMax:3.6,alturaMax:345},
+  {caudalMax:6.6,alturaMax:297},
+  {caudalMax:9,  alturaMax:283},
+  {caudalMax:12.6,alturaMax:298},
+  {caudalMax:16.8,alturaMax:228},
+  {caudalMax:24, alturaMax:192},
+];
+const INVERSORES=[
+  {modelo:'Drive-Tech MINI Solar 2.005',potMax:0.75,tensao:'3x230V',tipo:'MINI Solar'},
+  {modelo:'Drive-Tech MINI Solar 2.011',potMax:1.1,tensao:'3x230V',tipo:'MINI Solar'},
+  {modelo:'Drive-Tech MINI Solar 2.015',potMax:2.2,tensao:'3x230V',tipo:'MINI Solar'},
+  {modelo:'Drive-Tech Compact Solar 2.030/4.030',potMax:3,tensao:'3x230V ou 3x380V',tipo:'Compact Solar'},
+  {modelo:'Drive-Tech Compact Solar 2.040/4.040',potMax:4,tensao:'3x230V ou 3x380V',tipo:'Compact Solar'},
+  {modelo:'Drive-Tech Compact Solar 4.055',potMax:5.5,tensao:'3x380V',tipo:'Compact Solar'},
+  {modelo:'Drive-Tech Compact Solar 4.075',potMax:7.5,tensao:'3x380V',tipo:'Compact Solar'},
+];
+function potNec(q,h){return(1000*9.81*q*h)/(3600*1000*0.48);}
+function calcular(){
+  var q=parseFloat(document.getElementById('caudal').value)||2;
+  var p=parseFloat(document.getElementById('profundidade').value)||40;
+  var e=parseFloat(document.getElementById('alturaExtra').value)||0;
+  var l=parseFloat(document.getElementById('perdasCarga').value)||10;
+  var hes=document.getElementById('hes').value;
+  var H=p+e+l; var potC=potNec(q,H);
+  // Verificar se existe algum modelo compativel
+  var existeCompat=SERIES.some(function(s){return s.caudalMax>=q&&s.alturaMax>=H;});
+  var nm=document.getElementById('noMatch'); var rb=document.getElementById('resultBox');
+  if(!existeCompat){nm.classList.add('show');rb.classList.remove('show');return;}
+  nm.classList.remove('show');
+  // Seleccionar o modelo optimo com base na curva real
+  var modelo=seleccionarModelo(q,H);
+  if(!modelo){nm.classList.add('show');rb.classList.remove('show');return;}
+  var potM=modelo.pot;
+  var modeloEspecifico=modelo.id;
+  var hDisponivel=alturaEmCurva(modelo.curva,q);
+  var ratioOperacao=Math.round((H/hDisponivel)*100);
+  var inv=INVERSORES.find(function(i){return i.potMax>=potM;})||INVERSORES[INVERSORES.length-1];
+  // Painéis por potência — tabela definida
+  var panTab={
+    0.25:{min:2,max:3}, 0.37:{min:2,max:3}, 0.55:{min:2,max:4},
+    0.75:{min:3,max:4}, 1.1:{min:4,max:5},  1.5:{min:5,max:6},
+    2.2:{min:5,max:7},  3:{min:7,max:8},
+    4:{min:10,max:10},  5.5:{min:12,max:12}, 7.5:{min:16,max:16}
+  };
+  var hesTab={
+    0.25:{min:2,max:3}, 0.37:{min:2,max:3}, 0.55:{min:2,max:3},
+    0.75:{min:3,max:4}, 1.1:{min:3,max:4},  1.5:{min:4,max:5},
+    2.2:{min:5,max:6},  3:{min:6,max:6},
+    4:{min:10,max:10},  5.5:{min:10,max:10}, 7.5:{min:12,max:12}
+  };
+  var pt=panTab[potM]||{min:Math.ceil(potM*1000/600),max:Math.ceil(potM*1000*1.25/600)};
+  var ph=hesTab[potM]||{min:Math.ceil(pt.min*0.75),max:Math.ceil(pt.max*0.75)};
+  var pan=pt.max; // usar max para PVGIS (dimensionamento conservador)
+  var panH=ph.max;
+  var panLabel=pt.min===pt.max?pt.min+'':pt.min+' a '+pt.max;
+  var panHLabel=ph.min===ph.max?ph.min+'':ph.min+' a '+ph.max;
+  document.getElementById('resultGrid').innerHTML='<div class="result-card"><div class="rc-label">Caudal</div><div class="rc-val">'+q.toFixed(1)+'</div><div class="rc-sub">m3/hora</div></div><div class="result-card"><div class="rc-label">Altura manom.</div><div class="rc-val">'+H.toFixed(0)+'</div><div class="rc-sub">m.c.a.</div></div><div class="result-card"><div class="rc-label">Potencia calc.</div><div class="rc-val">'+potC.toFixed(2)+'</div><div class="rc-sub">kW</div></div><div class="result-card"><div class="rc-label">Paineis est.</div><div class="rc-val">'+panLabel+'</div><div class="rc-sub">x 600W</div></div>';
+  document.getElementById('resultPumps').innerHTML='<div class="result-pump"><h4>Bomba Recomendada - '+modeloEspecifico+'</h4><div class="pump-row"><span>Modelo</span><span>'+modeloEspecifico+'</span></div><div class="pump-row"><span>Serie</span><span>F4 Serie '+modelo.serie+' - Eletrobomba 4" Inox para furos</span></div><div class="pump-row"><span>Altura disponivel a '+q+' m3/h</span><span>'+Math.round(hDisponivel)+' m.c.a.</span></div><div class="pump-row"><span>Ponto de trabalho na curva</span><span>'+ratioOperacao+'% da altura maxima (zona central ideal)</span></div><div class="pump-row"><span>Potencia do modelo</span><span>'+potM+' kW</span></div><div class="pump-row"><span>Material</span><span>Corpo, filtro e protector em Inox AISI 304</span></div><div class="pump-row"><span>Valvula de retencao</span><span>Incorporada</span></div></div><div class="result-pump"><h4>Inversor Recomendado - '+inv.modelo+'</h4><div class="pump-row"><span>Modelo</span><span>'+inv.modelo+'</span></div><div class="pump-row"><span>Tipo</span><span>'+inv.tipo+'</span></div><div class="pump-row"><span>Potencia maxima</span><span>'+inv.potMax+' kW</span></div><div class="pump-row"><span>Tensao de saida</span><span>'+inv.tensao+'</span></div><div class="pump-row"><span>Alimentacao</span><span>Paineis solares DC ou rede AC (dual input)</span></div><div class="pump-row"><span>App</span><span>iOS / Android - Bluetooth - Wi-Fi</span></div></div>';
+  document.getElementById('resultHes').innerHTML=hes==='sim'?'<div class="result-hes"><strong>Opcao HES - Alta Eficiencia:</strong> Com motor Franklin Electric HES compativel com o '+inv.modelo+', este sistema precisaria apenas de <strong style="color:var(--sol)">'+panHLabel+' paineis de 600W</strong> em vez de '+panLabel+' - poupanca tipica de 25% em paineis (pode chegar a 50%). Algoritmo MPPT maximiza o rendimento solar. Disponivel para 2,2 kW, 3 kW e 4 kW com inversores Compact 2.030/4.030 e 2.040/4.040. <a href="produtos/motores-4-de-alta-eficiencia.html">Saber mais</a></div>':'';
+  rb.classList.add('show');
+  setTimeout(function(){rb.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+  // PVGIS simulation if location is set
+  if(_pvgisLat&&_pvgisLon){
+    var potKwp=parseFloat((pan*0.6).toFixed(2));
+    buscarPVGIS(_pvgisLat,_pvgisLon,potKwp,pan,potM,H,q,function(meses,anualKwh){
+      renderPVGIS(meses,anualKwh,H);
+    });
+  } else {
+    document.getElementById('pvgisResult').innerHTML='';
+  }
+}
+function comparar(){
+  var pot=parseFloat(document.getElementById('cPotencia').value);
+  var h=parseFloat(document.getElementById('cHoras').value);
+  var m=parseFloat(document.getElementById('cMeses').value);
+  var t=parseFloat(document.getElementById('cTarifa').value);
+  var kwhAno=pot*h*m*30; var redeAno=kwhAno*t; var dieselAno=kwhAno*0.40;
+  var inv=pot<=0.75?1900:pot<=1.5?2800:pot<=2.2?3600:pot<=3?4800:pot<=4?6200:pot<=5.5?7800:10200;
+  var solar10=inv*0.10; var rede10=redeAno*10; var diesel10=dieselAno*10*1.15;
+  var maxV=Math.max(solar10,rede10,diesel10);
+  var poup=Math.round(Math.min(rede10,diesel10)-solar10);
+  var pct=Math.round(poup/Math.min(rede10,diesel10)*100);
+  var pb=(1800/Math.min(redeAno,dieselAno)).toFixed(1);
+  function mkBar(l,v,cls,ic){var pp=(v/maxV*100).toFixed(1);var txt=pp>20?fEur(v):'';return '<div class="bar-row"><div class="bar-label">'+ic+' '+l+'</div><div class="bar-track"><div class="bar-fill '+cls+'" style="width:0" data-w="'+pp+'%">'+txt+'</div></div><div class="bar-val">'+fEur(v)+'</div></div>';}
+  document.getElementById('barChart').innerHTML=mkBar('Solar',solar10,'solar','☀')+mkBar('Rede',rede10,'rede','⚡')+mkBar('Diesel',diesel10,'diesel','⛽');
+  document.getElementById('summaryCards').innerHTML='<div class="sum-card verde"><div class="sum-val">'+fEur(poup)+'</div><div class="sum-lbl">Poupanca em 10 anos vs. alternativa</div></div><div class="sum-card amarelo"><div class="sum-val">'+pb+' anos</div><div class="sum-lbl">Retorno do investimento</div></div><div class="sum-card cinza-bg"><div class="sum-val">'+pct+'%</div><div class="sum-lbl">Reducao de custos</div></div>';
+  var pbPct=Math.min((pb/10)*100,100).toFixed(0);
+  document.getElementById('paybackArea').innerHTML='<div class="pb-title">Retorno do investimento solar ao longo de 10 anos</div><div class="pb-track"><div class="pb-fill" style="width:0" data-w="'+pbPct+'%"></div></div><div class="pb-labels"><span>Ano 0</span><span>Retorno: Ano '+pb+'</span><span>Ano 10</span></div><p style="font-size:12px;color:#6b7f96;margin-top:8px;">Apos '+pb+' anos toda a poupanca e lucro liquido - Paineis com garantia 25 anos - manutencao solar ~1%/ano.</p>';
+  var wrap=document.getElementById('chartWrap'); wrap.classList.add('show');
+  setTimeout(function(){document.querySelectorAll('[data-w]').forEach(function(el){el.style.width=el.dataset.w;});wrap.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+function fEur(v){return new Intl.NumberFormat('pt-PT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(v);}
+function nextStep(n){
+  document.querySelectorAll('.form-step').forEach(function(s){s.classList.remove('active');});
+  var s=document.getElementById('step'+n); if(s)s.classList.add('active');
+  [1,2,3].forEach(function(i){
+    document.getElementById('sdot'+i).className='step-dot '+(i<n?'done':i===n?'current':'pending');
+    var l=document.getElementById('sline'+i); if(l)l.className='step-line'+(i<n?' done':'');
+  });
+}
+function submitForm(){
+  var nome=document.getElementById('f_nome').value.trim();
+  var email=document.getElementById('f_email').value.trim();
+  if(!nome||!email){alert('Por favor preencha o nome e email para podermos contacta-lo.');return;}
+  document.querySelectorAll('.form-step').forEach(function(s){s.classList.remove('active');});
+  [1,2,3].forEach(function(i){
+    document.getElementById('sdot'+i).className='step-dot done';
+    var l=document.getElementById('sline'+i); if(l)l.className='step-line done';
+  });
+  var sb=document.getElementById('successBox'); sb.classList.add('show'); sb.scrollIntoView({behavior:'smooth'});
+}
+function showTab(id,btn){
+  document.querySelectorAll('.tool-section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById(id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  document.getElementById('ferramentas').scrollIntoView({behavior:'smooth'});
+}
+// ── PVGIS ──
+var _pvgisLat=null, _pvgisLon=null, _pvgisLocal='', _pvgisData=null;
+var MESES_PT=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+function pvgisStatus(msg,cor){
+  var el=document.getElementById('pvgisStatus');
+  el.style.display=msg?'block':'none';
+  el.style.color=cor||'#6b7f96';
+  el.innerHTML=msg||'';
+}
+
+function geocodificar(){
+  var local=document.getElementById('localidade').value.trim();
+  if(!local){pvgisStatus('Por favor introduza uma localidade.','#c0392b');return;}
+  pvgisStatus('&#128269; A procurar coordenadas...');
+  fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(local+', Portugal')+'&format=json&limit=1')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(!d.length){pvgisStatus('Localidade n&atilde;o encontrada. Tente ser mais espec&iacute;fico (ex: "Évora, Alentejo").','#c0392b');return;}
+      _pvgisLat=parseFloat(d[0].lat); _pvgisLon=parseFloat(d[0].lon);
+      _pvgisLocal=d[0].display_name.split(',').slice(0,2).join(',');
+      pvgisStatus('&#9989; '+_pvgisLocal+' ('+_pvgisLat.toFixed(4)+', '+_pvgisLon.toFixed(4)+') &mdash; Clique em <strong>Calcular</strong> para simular.','#156038');
+    })
+    .catch(function(){pvgisStatus('Erro ao procurar localidade. Verifique a liga&ccedil;&atilde;o.','#c0392b');});
+}
+
+function usarGeolocalizacao(){
+  if(!navigator.geolocation){pvgisStatus('Geolocaliza&ccedil;&atilde;o n&atilde;o suportada neste browser.','#c0392b');return;}
+  pvgisStatus('&#128205; A obter a sua localiza&ccedil;&atilde;o...');
+  navigator.geolocation.getCurrentPosition(
+    function(pos){
+      _pvgisLat=pos.coords.latitude; _pvgisLon=pos.coords.longitude;
+      _pvgisLocal='A sua localiza&ccedil;&atilde;o';
+      document.getElementById('localidade').value=_pvgisLat.toFixed(4)+', '+_pvgisLon.toFixed(4);
+      pvgisStatus('&#9989; Localiza&ccedil;&atilde;o obtida ('+_pvgisLat.toFixed(4)+', '+_pvgisLon.toFixed(4)+') &mdash; Clique em <strong>Calcular</strong> para simular.','#156038');
+    },
+    function(){pvgisStatus('N&atilde;o foi poss&iacute;vel obter a localiza&ccedil;&atilde;o. Active a permiss&atilde;o no browser.','#c0392b');}
+  );
+}
+
+function calcMeses(monthly,potBombaKW,caudalM3h){
+  // PVGIS ja aplica perdas (loss=14%) — os kWh devolvidos sao energia AC util
+  // Horas de funcionamento = kWh disponiveis / potencia da bomba
+  // Litros = horas x caudal real (m3/h) x 1000
+  var diasMes=[31,28,31,30,31,30,31,31,30,31,30,31];
+  return monthly.map(function(m,i){
+    var eKwh=m.E_m;
+    var horasEfect=Math.min(eKwh/potBombaKW, diasMes[i]*10);
+    var litros=Math.round(horasEfect*caudalM3h*1000);
+    return {mes:MESES_PT[i],kwh:Math.round(eKwh),litros:litros,horas:horasEfect.toFixed(1)};
+  });
+}
+function buscarPVGIS(lat,lon,potKwp,numPaineis,potBombaKW,alturaM,caudalM3h,callback){
+  var url='https://re.jrc.ec.europa.eu/api/v5_2/PVcalc'
+    +'?lat='+lat+'&lon='+lon
+    +'&peakpower='+potKwp
+    +'&loss=14'
+    +'&outputformat=json'
+    +'&mountingplace=free'
+    +'&optimalangles=1';
+  pvgisStatus('&#9728; A consultar dados solares PVGIS...');
+  fetch(url, {method:'GET', headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      return r.json();
+    })
+    .then(function(d){
+      pvgisStatus('');
+      var meses=calcMeses(d.outputs.monthly.fixed,potBombaKW,caudalM3h);
+      _pvgisData=meses;
+      callback(meses,d.outputs.totals.fixed.E_y);
+    })
+    .catch(function(err){
+      console.warn('PVGIS erro:',err);
+      var irradMedia=[2.5,3.2,4.5,5.5,6.5,7.2,7.8,7.4,5.8,4.2,2.8,2.2];
+      var pr=0.80;
+      var diasMes=[31,28,31,30,31,30,31,31,30,31,30,31];
+      var monthly=irradMedia.map(function(ir,i){return {E_m:ir*potKwp*pr*diasMes[i]};});
+      var meses=calcMeses(monthly,potBombaKW,caudalM3h);
+      var anualKwh=monthly.reduce(function(a,m){return a+m.E_m;},0);
+      _pvgisData=meses;
+      pvgisStatus('&#9888; Dados PVGIS indispon&iacute;veis &mdash; estimativa m&eacute;dia Portugal.','#c47a00');
+      callback(meses,anualKwh);
+    });
+}
+
+function renderPVGIS(meses,anualKwh,alturaM){
+  if(!meses){document.getElementById('pvgisResult').innerHTML='';return;}
+  var maxL=Math.max.apply(null,meses.map(function(m){return m.litros;}));
+  var totalLitros=meses.reduce(function(a,m){return a+m.litros;},0);
+  var diasMes=[31,28,31,30,31,30,31,31,30,31,30,31];
+  // Média diária = litros mensais / dias do mês
+  var mediaVerao=Math.round(((meses[5].litros/30)+(meses[6].litros/31)+(meses[7].litros/31))/3);
+  var mediaInverno=Math.round(((meses[11].litros/31)+(meses[0].litros/31)+(meses[1].litros/28))/3);
+
+  function fmtLitros(l){
+    if(l>=1000) return (l/1000).toFixed(1)+' m³';
+    return l+' L';
+  }
+
+  var bars=meses.map(function(m,i){
+    var litrosDia=Math.round(m.litros/diasMes[i]);
+    var pct=maxL>0?Math.round((m.litros/maxL)*100):0;
+    var lStr=fmtLitros(litrosDia)+'/dia';
+    return '<div class="pvgis-bar-wrap">'
+      +'<div class="pvgis-bar" style="height:0" data-h="'+pct+'%"></div>'
+      +'<div class="pvgis-month-lbl">'+m.mes+'</div>'
+      +'<div class="pvgis-month-val">'+lStr+'</div>'
+      +'</div>';
+  }).join('');
+
+  var totalStr=totalLitros>=1000000?(totalLitros/1000000).toFixed(1)+' M litros':(totalLitros/1000).toFixed(0)+'k litros';
+  var veraoStr=fmtLitros(mediaVerao)+'/dia';
+  var invernStr=fmtLitros(mediaInverno)+'/dia';
+
+  document.getElementById('pvgisResult').innerHTML=
+    '<div class="pvgis-block">'
+    +'<div class="pvgis-title">&#9728; Simula&ccedil;&atilde;o Solar PVGIS &mdash; '+(_pvgisLocal||'Localiza&ccedil;&atilde;o seleccionada')+'</div>'
+    +'<div class="pvgis-month-grid">'+bars+'</div>'
+    +'<div class="pvgis-summary">'
+    +'<div class="pvgis-stat"><div class="pvgis-stat-val">'+totalStr+'</div><div class="pvgis-stat-lbl">Total anual bombeado</div></div>'
+    +'<div class="pvgis-stat"><div class="pvgis-stat-val">'+veraoStr+'</div><div class="pvgis-stat-lbl">M&eacute;dia Ver&atilde;o (Jun-Ago)</div></div>'
+    +'<div class="pvgis-stat"><div class="pvgis-stat-val">'+invernStr+'</div><div class="pvgis-stat-lbl">M&eacute;dia Inverno (Dez-Fev)</div></div>'
+    +'<div class="pvgis-stat"><div class="pvgis-stat-val">'+Math.round(anualKwh)+' kWh</div><div class="pvgis-stat-lbl">Produ&ccedil;&atilde;o solar anual</div></div>'
+    +'</div>'
+    +'<p class="pvgis-note">Simula&ccedil;&atilde;o baseada em dados PVGIS (CE) com inclina&ccedil;&atilde;o &oacute;tima. &Aacute;gua bombeada calculada com efici&ecirc;ncia do inversor de 90% e altura manom&eacute;trica de '+alturaM+'m. Valores indicativos &mdash; depende da irradi&acirc;ncia real, temperatura e condi&ccedil;&otilde;es do furo.</p>'
+    +'</div>';
+
+  // Animate bars after render
+  setTimeout(function(){
+    document.querySelectorAll('.pvgis-bar[data-h]').forEach(function(b){
+      b.style.height=b.dataset.h;
+    });
+  },100);
+}
+
+// FAQ e localidade
+var loc=document.getElementById('localidade');
+if(loc) loc.addEventListener('keydown',function(e){if(e.key==='Enter')geocodificar();});
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=q.closest('.faq-item'); var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!open)item.classList.add('open');
+  });
+});
+</script>
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
+</body>
+</html>

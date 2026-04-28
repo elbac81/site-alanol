@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Alanol Eletrobombas Submersíveis — Bombas de Água</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=202604271305">
+<style>
+/* ══ NÚMEROS ══ */
+.numbers-section{background:var(--coal);padding:3.5rem 0}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.number-item{text-align:center;padding:2rem 1.5rem;border-right:1px solid rgba(255,255,255,.08)}
+.number-item:last-child{border-right:none}
+.number-val{font-family:"Barlow Condensed",sans-serif;font-size:56px;font-weight:800;color:#fff;line-height:1;display:inline}
+.number-plus{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:700;color:var(--brand);display:inline;margin-left:2px}
+.number-label{font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.7);margin-top:.5rem}
+.number-desc{font-size:12px;color:rgba(255,255,255,.35);font-weight:300;margin-top:.3rem}
+
+/* ══ DIMENSIONADOR ══ */
+.selector-section{background:var(--brand);padding:4.5rem 0}
+.selector-wrap{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:center}
+.selector-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.sel-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:1.25rem 1rem;text-align:center;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.sel-card:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);transform:translateY(-2px)}
+.sel-card svg{width:36px;height:36px;color:rgba(255,255,255,.8);margin-bottom:.25rem}
+.sel-card span{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#fff}
+.sel-card small{font-size:11px;color:rgba(255,255,255,.5);font-weight:300}
+
+/* ══ PORQUÊ ══ */
+.why-section{padding:5rem 0;background:var(--off)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.75rem;transition:all .2s}
+.why-card:hover{border-color:var(--brand);transform:translateY(-2px);box-shadow:0 6px 24px rgba(46,54,62,.08)}
+.why-icon{width:42px;height:42px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.why-icon svg{width:20px;height:20px;color:#fff}
+.why-card h3{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;color:var(--coal);margin-bottom:.5rem;letter-spacing:.3px}
+.why-card p{font-size:13px;color:var(--steel);line-height:1.65;font-weight:300}
+
+/* ══ PARCEIROS ══ */
+.partners-section{padding:4rem 0;background:#fff;border-top:1px solid var(--border)}
+.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.partner-card{border:1px solid var(--border);border-radius:8px;padding:2rem 1.5rem;text-align:center;transition:all .2s;background:var(--off)}
+.partner-card:hover{border-color:var(--brand);background:#fff;box-shadow:0 4px 16px rgba(46,54,62,.07)}
+.partner-logo{font-family:"Barlow Condensed",sans-serif;font-size:1.45rem;font-weight:800;color:var(--coal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem;line-height:1.2}
+.partner-logo span{color:var(--steel);font-weight:600}
+.partner-card p{font-size:12px;color:var(--steel);line-height:1.6;font-weight:300}
+
+/* ══ CTA FINAL ══ */
+.cta-final{background:var(--brand);padding:4rem 0}
+.cta-final-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.cta-final-text h2{font-family:"Barlow Condensed",sans-serif;font-size:clamp(26px,3.5vw,44px);font-weight:800;color:#fff;text-transform:uppercase;line-height:1.05;letter-spacing:-.5px;margin-bottom:.75rem}
+.cta-final-text p{font-size:15px;color:rgba(255,255,255,.68);font-weight:300;line-height:1.7;max-width:520px}
+.cta-final-btns{display:flex;align-items:center;gap:1.25rem;flex-shrink:0;flex-wrap:wrap}
+.cta-tel{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.85);font-family:"Barlow Condensed",sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;text-decoration:none;transition:color .2s}
+.cta-tel:hover{color:#fff}
+
+/* Responsive */
+@media(max-width:1100px){
+  .numbers-grid{grid-template-columns:1fr 1fr}
+  .number-item:nth-child(2){border-right:none}
+  .number-item:nth-child(1),.number-item:nth-child(2){border-bottom:1px solid rgba(255,255,255,.08)}
+  .selector-wrap{grid-template-columns:1fr}.selector-cards{grid-template-columns:repeat(3,1fr)}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .partners-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .numbers-grid{grid-template-columns:1fr 1fr}
+  .selector-cards{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr}
+  .partners-grid{grid-template-columns:1fr}
+  .cta-final-inner{flex-direction:column;text-align:center}
+}
+
+/* ══ FORM STATES ══ */
+@keyframes spin { to { transform: rotate(360deg); } }
+.form-submit:disabled { opacity: .7; cursor: not-allowed; }
+.form-row input.invalid, .form-row textarea.invalid {
+  border-color: #e74c3c;
+  background: #fff8f8;
+}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<!-- ══ PAGE HOME ══ -->
+<div class="page active" id="page-home">
+
+  <section class="hero-slider" id="heroSlider">
+    <div class="slides-track" id="slidesTrack">
+      <div class="slide is-active">
+        <div class="slide-bg" style="background-image:url('https://alanol.pt/img/slides/slide1.png')"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <div class="slide-tag">Desde 1959</div>
+          <div class="slide-h1">Eletrobombas<br>Submersíveis</div>
+          <div class="slide-sub">Alanol S.A.</div>
+          <p class="slide-desc">Mais de 65 anos a fabricar e comercializar eletrobombas para a indústria, agricultura e particulares.</p>
+          <div class="slide-btns">
+            <button class="btn-white" onclick="gocat('todos')">Ver Catálogo</button>
+            <button class="btn-ghost" onclick="gopage('contacto')">Fale Connosco</button>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="background-image:url('https://alanol.pt/img/slides/slide2.jpg')"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <div class="slide-tag">Eletrobombas de Furo</div>
+          <div class="slide-h1">Furo 4" a 10"</div>
+          <div class="slide-sub">Até 580 metros de profundidade</div>
+          <p class="slide-desc">Da série F4" às grandes FTI e VSC — motores Franklin Electric® de alta eficiência.</p>
+          <div class="slide-btns">
+            <button class="btn-white" onclick="gocat('furo')">Ver Bombas de Furo</button>
+            <button class="btn-ghost" onclick="gopage('contacto')">Fale Connosco</button>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="background-image:url('https://alanol.pt/img/slides/slide3.jpg')"></div>
+        <div class="slide-overlay" style="background:linear-gradient(105deg,rgba(10,40,20,.75) 0%,rgba(10,40,20,.3) 55%,rgba(0,0,0,.1) 100%)"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <div class="slide-tag" style="border-color:rgba(76,175,144,.5);color:#a0dfc8">Bombagem Solar</div>
+          <div class="slide-h1">Energia Solar<br>para Bombagem</div>
+          <div class="slide-sub">Off-grid · Até 345 metros</div>
+          <p class="slide-desc">Kits completos com bomba submersível e controlador Drive-Tech®. Sem rede elétrica.</p>
+          <div class="slide-btns">
+            <button class="btn-white" onclick="gocat('solar')">Ver Produtos Solares</button>
+            <button class="btn-ghost" onclick="gopage('contacto')">Calcular Sistema</button>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="background-image:url('https://alanol.pt/img/slides/slide4.jpg')"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <div class="slide-tag">Instalações de Rega</div>
+          <div class="slide-h1">Soluções para<br>Agricultura</div>
+          <div class="slide-sub">Rega · Furo · Solar</div>
+          <p class="slide-desc">Sistemas de bombagem para rega agrícola de qualquer dimensão.</p>
+          <div class="slide-btns">
+            <button class="btn-white" onclick="gocat('todos')">Ver Produtos</button>
+            <a href="https://wa.me/351910178819?text=Olá%2C%20gostaria%20de%20falar%20com%20um%20técnico%20sobre%20um%20produto%20ALANOL." target="_blank" rel="noopener" class="btn-ghost wa-btn" style="display:inline-flex;align-items:center;gap:.35rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:middle;margin-right:5px;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar com Técnico</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="slide">
+        <div class="slide-bg" style="background-image:url('https://alanol.pt/img/slides/slide5.jpg')"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content"><div class="slide-inner">
+          <div class="slide-tag">Poço &amp; Drenagem</div>
+          <div class="slide-h1">Série AM/AT<br>Fabrico Próprio</div>
+          <div class="slide-sub">Poço · Alumínio · INOX</div>
+          <p class="slide-desc">Eletrobombas de poço fabricadas em Portugal desde 1959.</p>
+          <div class="slide-btns">
+            <button class="btn-white" onclick="gocat('poco')">Ver Bombas de Poço</button>
+            <button class="btn-ghost" onclick="gopage('contacto')">Fale Connosco</button>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <button class="sl-arrow sl-prev" id="slPrev"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="sl-arrow sl-next" id="slNext"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="sl-dots" id="slDots"></div>
+    <div class="sl-progress" id="slProg"></div>
+    <div class="sl-counter" id="slCounter">1 / 5</div>
+  </section>
+
+  <div class="strip"><div class="strip-inner">
+    <div class="strip-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>/div>
+    <div class="strip-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Suporte Técnico</div>
+    <div class="strip-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Peças &amp; Assistência</div>
+    <div class="strip-item"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Sistemas Solares</div>
+  </div></div>
+
+  <section class="home-cats section">
+    <div class="sec-inner">
+      <div class="eyebrow">Catálogo de Produtos</div>
+      <h2 class="sec-h">As Nossas Eletrobombas</h2>
+      <p class="sec-p">49 referências para furo, poço, superfície, solar, depósitos e controlo.</p>
+      <div class="cats-grid" id="homeCatsGrid"></div>
+    </div>
+  </section>
+
+  <div class="solar-banner">
+    <div class="solar-inner">
+      <div class="solar-text">
+        <div class="eyebrow" style="color:#4caf90">Sistemas de Bombagem Solar</div>
+        <h2 class="sec-h light" style="margin-bottom:1rem">Energia Solar<br>para Bombagem</h2>
+        <p style="font-size:15px;color:var(--silver);font-weight:300;line-height:1.7;max-width:420px;margin-bottom:2rem">Bombas solares para furos e poços sem ligação à rede elétrica. Kits completos com Drive-Tech®, até 345m.</p>
+        <button class="nav-cta" onclick="gocat('solar')" style="width:fit-content">Ver Produtos Solares</button>
+      </div>
+      <div class="solar-visual">
+        <div class="solar-feats">
+          <div class="sol-feat"><h4>Zero Eletricidade</h4><p>100% energia fotovoltaica</p></div>
+          <div class="sol-feat"><h4>Até 345m</h4><p>Furos profundos</p></div>
+          <div class="sol-feat"><h4>Off-Grid</h4><p>Sem rede elétrica</p></div>
+          <div class="sol-feat"><h4>Kits Completos</h4><p>Bomba + Drive-Tech®</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ NÚMEROS ══ -->
+  <section class="numbers-section">
+    <div class="sec-inner">
+      <div class="numbers-grid">
+        <div class="number-item">
+          <div class="number-val" data-target="65">0</div>
+          <div class="number-plus">+</div>
+          <div class="number-label">Anos de Experiência</div>
+          <div class="number-desc">Fundada em 1959, em Braga</div>
+        </div>
+        <div class="number-item">
+          <div class="number-val" data-target="49">0</div>
+          <div class="number-plus"></div>
+          <div class="number-label">Referências de Produto</div>
+          <div class="number-desc">Furo, poço, superfície, solar e mais</div>
+        </div>
+        <div class="number-item">
+          <div class="number-val" data-target="580">0</div>
+          <div class="number-plus">m</div>
+          <div class="number-label">Profundidade Máxima</div>
+          <div class="number-desc">Bombas VSC 8"/10" INOX</div>
+        </div>
+        <div class="number-item">
+          <div class="number-val" data-target="550">0</div>
+          <div class="number-plus">m³/h</div>
+          <div class="number-label">Caudal Máximo</div>
+          <div class="number-desc">Série FTI furo elevado caudal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DIMENSIONADOR RÁPIDO ══ -->
+  <section class="selector-section">
+    <div class="sec-inner">
+      <div class="selector-wrap">
+        <div class="selector-text">
+          <div class="eyebrow" style="color:#fff;opacity:.6">Encontre a bomba certa</div>
+          <h2 class="sec-h light">Qual é a sua<br>aplicação?</h2>
+          <p style="color:rgba(255,255,255,.65);font-size:15px;font-weight:300;line-height:1.7;max-width:360px">Seleccione o tipo de instalação e o nosso catálogo filtra automaticamente os produtos adequados para si.</p>
+        </div>
+        <div class="selector-cards">
+          <div class="sel-card" onclick="gocat('furo')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="20" cy="20" r="8"/><line x1="20" y1="4" x2="20" y2="11"/><line x1="20" y1="29" x2="20" y2="36"/><line x1="4" y1="20" x2="11" y2="20"/><line x1="29" y1="20" x2="36" y2="20"/></svg>
+            <span>Furo</span>
+            <small>4" · 6" · 8" · 10"</small>
+          </div>
+          <div class="sel-card" onclick="gocat('poco')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M20 6C20 6 12 14 12 22C12 26.4 15.6 30 20 30C24.4 30 28 26.4 28 22C28 14 20 6 20 6Z"/><line x1="20" y1="30" x2="20" y2="36"/><line x1="15" y1="36" x2="25" y2="36"/></svg>
+            <span>Poço</span>
+            <small>Alumínio · INOX · Drenagem</small>
+          </div>
+          <div class="sel-card" onclick="gocat('superficie')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="8" y="16" width="24" height="14" rx="2"/><path d="M8 16L14 10L20 16L26 10L32 16"/><line x1="20" y1="30" x2="20" y2="36"/></svg>
+            <span>Superfície</span>
+            <small>EH · EV · Grupos pressão</small>
+          </div>
+          <div class="sel-card" onclick="gocat('solar')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="20" cy="16" r="6"/><line x1="20" y1="4" x2="20" y2="8"/><line x1="20" y1="24" x2="20" y2="28"/><line x1="8" y1="16" x2="12" y2="16"/><line x1="28" y1="16" x2="32" y2="16"/><line x1="11.5" y1="7.5" x2="14.2" y2="10.2"/><line x1="25.8" y1="21.8" x2="28.5" y2="24.5"/><rect x="8" y="30" width="24" height="7" rx="1"/><line x1="14" y1="30" x2="14" y2="37"/><line x1="20" y1="30" x2="20" y2="37"/><line x1="26" y1="30" x2="26" y2="37"/></svg>
+            <span>Solar</span>
+            <small>Off-grid · Drive-Tech®</small>
+          </div>
+          <div class="sel-card" onclick="gocat('depositos')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="12" y="8" width="16" height="24" rx="3"/><ellipse cx="20" cy="8" rx="8" ry="3"/><line x1="20" y1="32" x2="20" y2="38"/><line x1="16" y1="38" x2="24" y2="38"/><line x1="12" y1="18" x2="28" y2="18"/></svg>
+            <span>Depósitos</span>
+            <small>INOX · 24 a 1300L</small>
+          </div>
+          <div class="sel-card" onclick="gocat('controlo')">
+            <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="10" width="28" height="20" rx="2"/><circle cx="14" cy="18" r="3"/><circle cx="14" cy="18" r="1" fill="currentColor"/><circle cx="24" cy="18" r="3"/><line x1="21" y1="26" x2="32" y2="26"/><line x1="8" y1="22" x2="18" y2="22"/></svg>
+            <span>Controlo</span>
+            <small>Quadros · Variadores</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PORQUÊ A ALANOL ══ -->
+  <section class="why-section">
+    <div class="sec-inner">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="eyebrow">A Nossa Diferença</div>
+        <h2 class="sec-h" style="display:flex;justify-content:center">Porquê a Alanol?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+          <h3>Entrega Rápida</h3>
+          <p>Stock das principais referências. Entrega em todo o território nacional e exportação.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h3>Empresa Familiar</h3>
+          <p>Três gerações ao serviço do cliente. Relação directa, sem intermediários, com o fabricante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA FINAL ══ -->
+  <section class="cta-final">
+    <div class="cta-final-inner">
+      <div class="cta-final-text">
+        <h2>Precisa de ajuda a escolher<br>a bomba certa?</h2>
+        <p>A nossa equipa técnica dimensiona gratuitamente o sistema ideal para a sua aplicação — furo, poço, rega ou solar. Resposta em menos de 24 horas.</p>
+      </div>
+      <div class="cta-final-btns">
+        <button class="btn-white" onclick="gopage('contacto')">Fale Connosco</button>
+        <a href="tel:+351253501414" class="cta-tel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.69A2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +351 253 501 414
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+<!-- ══ PAGE CAT ══ -->
+<div class="page" id="page-cat">
+  <div class="cat-bar">
+    <div class="cat-bar-bg" id="catBg"></div>
+    <div class="cat-bar-inner">
+      <div class="bc"><a onclick="gohome()">Início</a><span class="sep">›</span><a onclick="gocat('todos')">Produtos</a><span class="sep" id="bcSep">›</span><span class="cur" id="bcCur"></span></div>
+      <div class="cat-eyebrow" id="catEyebrow"></div>
+      <h1 class="cat-title" id="catTitle"></h1>
+      <p class="cat-desc" id="catDesc"></p>
+      <span class="cat-count" id="catCount"></span>
+    </div>
+  </div>
+
+  <!-- ── FILTROS ── -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <!-- Linha 1: Categorias + Pesquisa -->
+      <div class="filter-row-1">
+        <div class="filter-cats" id="filterCats">
+          <button class="fcat-btn active" data-cat="todos" onclick="setCatFilter('todos')">Todos <span id="fcCount-todos"></span></button>
+          <button class="fcat-btn" data-cat="furo" onclick="setCatFilter('furo')">Furo <span id="fcCount-furo"></span></button>
+          <button class="fcat-btn" data-cat="poco" onclick="setCatFilter('poco')">Poço <span id="fcCount-poco"></span></button>
+          <button class="fcat-btn" data-cat="superficie" onclick="setCatFilter('superficie')">Superfície <span id="fcCount-superficie"></span></button>
+          <button class="fcat-btn" data-cat="solar" onclick="setCatFilter('solar')">Solar <span id="fcCount-solar"></span></button>
+          <button class="fcat-btn" data-cat="depositos" onclick="setCatFilter('depositos')">Depósitos <span id="fcCount-depositos"></span></button>
+          <button class="fcat-btn" data-cat="controlo" onclick="setCatFilter('controlo')">Controlo <span id="fcCount-controlo"></span></button>
+        </div>
+        <div class="filter-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="filterSearch" placeholder="Pesquisar produto..." oninput="applyFilters()">
+          <button class="filter-clear-search" id="clearSearch" onclick="clearSearch()" style="display:none">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linha 2: Tags + Sort -->
+      <div class="filter-row-2">
+        <div>
+          <button class="ftag-toggle" id="cTagsToggle" onclick="cToggleTags()">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="3"/><path d="M3 6h2m4 0h12M3 12h8m4 0h6M3 18h2m4 0h12"/></svg>
+          Escolher por Aplicação
+          <svg class="ftag-toggle-arrow" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="filter-tags" id="cTagsRow" style="display:none;margin-top:.5rem">
+          <button class="ftag-btn active" data-ctag="" onclick="cSetTag('')">Todas</button>
+          <button class="ftag-btn" data-ctag="Água Limpa"                onclick="cSetTag('Água Limpa')">Água Limpa</button>
+          <button class="ftag-btn" data-ctag="Água Suja"                 onclick="cSetTag('Água Suja')">Água Suja</button>
+          <button class="ftag-btn" data-ctag="Água Lodosa"               onclick="cSetTag('Água Lodosa')">Água Lodosa</button>
+          <button class="ftag-btn" data-ctag="Drenagem"                  onclick="cSetTag('Drenagem')">Drenagem</button>
+          <button class="ftag-btn" data-ctag="Fossa"                     onclick="cSetTag('Fossa')">Fossa</button>
+          <button class="ftag-btn" data-ctag="Rega Residencial"          onclick="cSetTag('Rega Residencial')">Rega Residencial</button>
+          <button class="ftag-btn" data-ctag="Rega Agrícola"             onclick="cSetTag('Rega Agrícola')">Rega Agrícola</button>
+          <button class="ftag-btn" data-ctag="Pressurização Unifamiliar" onclick="cSetTag('Pressurização Unifamiliar')">Pressurização Unifamiliar</button>
+          <button class="ftag-btn" data-ctag="Pressurização Edifícios"   onclick="cSetTag('Pressurização Edifícios')">Pressurização Edifícios</button>
+          <button class="ftag-btn" data-ctag="Construção"                onclick="cSetTag('Construção')">Construção</button>
+          <button class="ftag-btn" data-ctag="Pedreiras"                 onclick="cSetTag('Pedreiras')">Pedreiras</button>
+          <button class="ftag-btn" data-ctag="Campos Desportivos"        onclick="cSetTag('Campos Desportivos')">Campos Desportivos</button>
+          <button class="ftag-btn" data-ctag="Águas Agressivas"          onclick="cSetTag('Águas Agressivas')">Águas Agressivas</button>
+          <button class="ftag-btn" data-ctag="HVAC / AVAC"               onclick="cSetTag('HVAC / AVAC')">HVAC / AVAC</button>
+          <button class="ftag-btn" data-ctag="Solar"                  onclick="cSetTag('Solar')">Solar</button>
+          <button class="ftag-btn" data-ctag="Motores Submersíveis"         onclick="cSetTag('Motores Submersíveis')">Motores Submersíveis</button>
+          <button class="ftag-btn" data-ctag="Acessórios de Montagem"       onclick="cSetTag('Acessórios de Montagem')">Acessórios de Montagem</button>
+        </div>
+      </div>
+
+        <select class="filter-sort" id="filterSort" onchange="applyFilters()">
+          <option value="default">Ordem padrão</option>
+          <option value="az">Nome A → Z</option>
+          <option value="za">Nome Z → A</option>
+          <option value="q_asc">Caudal ↑</option>
+          <option value="q_desc">Caudal ↓</option>
+          <option value="h_asc">Pressão ↑</option>
+          <option value="h_desc">Pressão ↓</option>
+          <option value="kw_asc">Potência ↑</option>
+          <option value="kw_desc">Potência ↓</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Banner informativo Solar — mostrado só na categoria solar -->
+  <div id="solarInfoBanner" style="display:none;background:#e8f5ec;border-bottom:1px solid #b7dfc4;padding:.65rem 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#156038" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span style="font-size:13px;color:#156038;font-weight:400"><strong>Compatibilidade Solar:</strong> As eletrobombas EH, EV, FNC, VL, F4, FTI-VS, VSC, VN, ES, EGN, EGT/EGF, ED/EDV e motores Franklin® também funcionam a energia solar. Trifásicas compatíveis: <strong>até 4 kW a 3×230 V</strong> e <strong>até 55 kW a 3×400 V</strong>.</span>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="cat-content">
+    <div class="sec-inner">
+      <div class="prod-grid" id="catGrid"></div>
+      <!-- Sem resultados -->
+      <div class="no-results" id="noResults" style="display:none">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>Sem resultados</h3>
+        <p>Não encontrámos produtos para "<span id="noResultsQuery"></span>"</p>
+        <button onclick="clearSearch()">Limpar pesquisa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE PRODUTOS ══ -->
+<div class="page" id="page-produtos">
+  <div class="cat-bar">
+    <div class="cat-bar-inner">
+      <div class="bc"><a onclick="gohome()">Início</a><span class="sep">›</span><span class="cur">Todos os Produtos</span></div>
+      <div class="cat-eyebrow">Alanol® — Catálogo Completo</div>
+      <h1 class="cat-title">Todos os Produtos</h1>
+      <p class="cat-desc">49 referências para furo, poço, superfície, solar, depósitos e controlo.</p>
+      <span class="cat-count" id="pCount">49 referências</span>
+    </div>
+  </div>
+
+  <!-- ── FILTROS ── -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <!-- Linha 1: Categorias + Pesquisa -->
+      <div class="filter-row-1">
+        <div class="filter-cats">
+          <button class="fcat-btn active" data-pcat="todos"       onclick="pSetCat('todos')">Todos       <span id="pfc-todos"></span></button>
+          <button class="fcat-btn"        data-pcat="furo"        onclick="pSetCat('furo')">Furo         <span id="pfc-furo"></span></button>
+          <button class="fcat-btn"        data-pcat="poco"        onclick="pSetCat('poco')">Poço         <span id="pfc-poco"></span></button>
+          <button class="fcat-btn"        data-pcat="superficie"  onclick="pSetCat('superficie')">Superfície <span id="pfc-superficie"></span></button>
+          <button class="fcat-btn"        data-pcat="solar"       onclick="pSetCat('solar')">Solar        <span id="pfc-solar"></span></button>
+          <button class="fcat-btn"        data-pcat="depositos"   onclick="pSetCat('depositos')">Depósitos  <span id="pfc-depositos"></span></button>
+          <button class="fcat-btn"        data-pcat="controlo"    onclick="pSetCat('controlo')">Controlo   <span id="pfc-controlo"></span></button>
+        </div>
+        <div class="filter-search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="pSearch" placeholder="Pesquisar produto..." oninput="pApplyFilters()">
+          <button class="filter-clear-search" id="pClearSearch" onclick="pClearSearch()" style="display:none">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Linha 2: Tags + Sort -->
+      <div class="filter-row-2">
+        <div>
+          <button class="ftag-toggle" id="pTagsToggle" onclick="pToggleTags()">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="3"/><path d="M3 6h2m4 0h12M3 12h8m4 0h6M3 18h2m4 0h12"/></svg>
+          Escolher por Aplicação
+          <svg class="ftag-toggle-arrow" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="filter-tags" id="pTagsRow" style="display:none;margin-top:.5rem">
+          <button class="ftag-btn active" data-ptag="" onclick="pSetTag('')">Todas</button>
+          <button class="ftag-btn" data-ptag="Água Limpa"                onclick="pSetTag('Água Limpa')">Água Limpa</button>
+          <button class="ftag-btn" data-ptag="Água Suja"                 onclick="pSetTag('Água Suja')">Água Suja</button>
+          <button class="ftag-btn" data-ptag="Água Lodosa"               onclick="pSetTag('Água Lodosa')">Água Lodosa</button>
+          <button class="ftag-btn" data-ptag="Drenagem"                  onclick="pSetTag('Drenagem')">Drenagem</button>
+          <button class="ftag-btn" data-ptag="Fossa"                     onclick="pSetTag('Fossa')">Fossa</button>
+          <button class="ftag-btn" data-ptag="Rega Residencial"          onclick="pSetTag('Rega Residencial')">Rega Residencial</button>
+          <button class="ftag-btn" data-ptag="Rega Agrícola"             onclick="pSetTag('Rega Agrícola')">Rega Agrícola</button>
+          <button class="ftag-btn" data-ptag="Pressurização Unifamiliar" onclick="pSetTag('Pressurização Unifamiliar')">Pressurização Unifamiliar</button>
+          <button class="ftag-btn" data-ptag="Pressurização Edifícios"   onclick="pSetTag('Pressurização Edifícios')">Pressurização Edifícios</button>
+          <button class="ftag-btn" data-ptag="Construção"                onclick="pSetTag('Construção')">Construção</button>
+          <button class="ftag-btn" data-ptag="Pedreiras"                 onclick="pSetTag('Pedreiras')">Pedreiras</button>
+          <button class="ftag-btn" data-ptag="Campos Desportivos"        onclick="pSetTag('Campos Desportivos')">Campos Desportivos</button>
+          <button class="ftag-btn" data-ptag="Águas Agressivas"          onclick="pSetTag('Águas Agressivas')">Águas Agressivas</button>
+          <button class="ftag-btn" data-ptag="HVAC / AVAC"               onclick="pSetTag('HVAC / AVAC')">HVAC / AVAC</button>
+          <button class="ftag-btn" data-ptag="Solar"                  onclick="pSetTag('Solar')">Solar</button>
+          <button class="ftag-btn" data-ptag="Motores Submersíveis"         onclick="pSetTag('Motores Submersíveis')">Motores Submersíveis</button>
+          <button class="ftag-btn" data-ptag="Acessórios de Montagem"       onclick="pSetTag('Acessórios de Montagem')">Acessórios de Montagem</button>
+        </div>
+      </div>
+        <select class="filter-sort" id="pSort" onchange="pApplyFilters()">
+          <option value="default">Ordem padrão</option>
+          <option value="az">Nome A → Z</option>
+          <option value="za">Nome Z → A</option>
+          <option value="q_asc">Caudal ↑</option>
+          <option value="q_desc">Caudal ↓</option>
+          <option value="h_asc">Pressão ↑</option>
+          <option value="h_desc">Pressão ↓</option>
+          <option value="kw_asc">Potência ↑</option>
+          <option value="kw_desc">Potência ↓</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-content">
+    <div class="sec-inner">
+      <div class="prod-grid" id="pGrid"></div>
+      <div class="no-results" id="pNoResults" style="display:none">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3>Sem resultados</h3>
+        <p>Não encontrámos produtos para "<span id="pNoQuery"></span>"</p>
+        <button onclick="pClearSearch()">Limpar pesquisa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE EMPRESA ══ -->
+<div class="page" id="page-empresa">
+
+  <!-- HERO COM FOTO DAS INSTALAÇÕES -->
+  <div style="position:relative;height:420px;overflow:hidden">
+    <img src="https://alanol.pt/img/empresa-instalacoes.jpg" alt="ALANOL — Instalações Fafe"
+         style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(20,26,32,.75) 0%,rgba(20,26,32,.3) 60%,rgba(20,26,32,.1) 100%)"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding-bottom:3rem">
+      <div style="max-width:1280px;width:100%;margin:0 auto;padding:0 2rem">
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);font-family:'Barlow Condensed',sans-serif;font-weight:600;margin-bottom:.5rem">
+          <a onclick="gohome()" style="color:rgba(255,255,255,.5);cursor:pointer">Início</a>
+          <span style="margin:0 .4rem;color:rgba(255,255,255,.25)">›</span>
+          <span style="color:rgba(255,255,255,.7)">Empresa</span>
+        </div>
+        <h1 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(42px,6vw,72px);font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:-.5px;line-height:.95;margin-bottom:.6rem">Sobre Nós</h1>
+        <p style="font-size:17px;color:rgba(255,255,255,.7);font-weight:300;max-width:480px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">Eletrobombas submersíveis desde 1959. Uma empresa portuguesa, uma história de inovação.</p>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- HISTÓRIA + TIMELINE -->
+  <div class="empresa-section">
+    <div class="empresa-inner">
+      <div class="empresa-text">
+        <div class="eyebrow">A Nossa História</div>
+        <h2 class="sec-h" style="margin-bottom:1.25rem">Desde 1959<br>Desde 1959</h2>
+        <p>A história da ALANOL® começa em 1959, com a fundação de uma empresa de serralharia mecânica por José Antunes, em Fafe. Foi neste ambiente de trabalho artesanal e rigor técnico que nasceu o espírito de inovação que ainda hoje define a empresa.</p>
+        <p>Em 03 de Janeiro de 1977, Albano Antunes Oliveira registou a patente de eletrobombas submersíveis desenvolvidas internamente, dando origem formal à <strong>ALANOL Eletrobombas Submersíveis S.A.</strong> Desde essa data, a empresa iniciou uma produção consistente de material próprio, sustentada por uma filosofia de inovação e qualidade que a tornou uma das pioneiras nacionais do sector.</p>
+        <p>A década de 80 marcou uma transformação decisiva: a ALANOL especializou-se na produção de eletrobombas submersíveis, alargando naturalmente a sua actividade a produtos complementares — depósitos inoxidáveis, quadros eléctricos de comando e controlo — e a serviços especializados de montagem e reparação.</p>
+        <p>Em 1997, a empresa mudou a sua denominação social para <strong>ALANOL S.A.</strong>, sociedade anónima, reafirmando o compromisso com o crescimento contínuo e sustentado. A ALANOL® tornou-se assim um nome consolidado no sector, mantendo o objectivo de um futuro com sucesso, tendo por base um passado de profissionalismo e ética comercial que a caracteriza desde a sua fundação.</p>
+        <p>A partir de 2005, a ALANOL® alargou a sua actividade às <strong>eletrobombas de superfície</strong>, ficando capaz de satisfazer todas as necessidades do mercado. As bombas de superfície ALANOL® trabalham com temperaturas até 120 °C, podendo integrar sistemas de aquecimento, AVAC e HVAC. Surgiram também as centrais de superfície, com sistemas automatizados de controlo e protecção, que permitem uma gestão mais eficaz e maior eficiência energética.</p>
+        <p>Em 2011, a ALANOL® obteve o <strong>certificado de exame CE para equipamentos sob pressão</strong>, confirmando o cumprimento dos requisitos da Directiva dos Equipamentos Sob Pressão n.º 97/23 CE — um reconhecimento formal da qualidade e segurança dos seus produtos.</p>
+        <p>Hoje, a partir de Fafe, a ALANOL serve clientes em todo o território nacional e além-fronteiras, combinando o fabrico próprio das séries AM/AT com a distribuição de marcas de referência mundial como a <strong>Franklin Electric®</strong>.</p>
+
+        <!-- GALERIA HISTÓRICA -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0 1.5rem">
+          <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:#111">
+            <img src="https://alanol.pt/img/empresa-historica-1.jpg" alt="Eletrobombas ALANOL — arquivo histórico"
+                 style="width:100%;height:100%;object-fit:cover;opacity:.9;display:block;transition:transform .4s ease"
+                 onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:.6rem .85rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)">
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.8)">Arquivo · Anos 70</span>
+            </div>
+          </div>
+          <div style="position:relative;border-radius:6px;overflow:hidden;aspect-ratio:1/1;background:#111">
+            <img src="https://alanol.pt/img/empresa-historica-2.png" alt="Produtos históricos ALANOL"
+                 style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:.9;display:block;transition:transform .4s ease"
+                 onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:.6rem .85rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)">
+              <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.8)">Primeiros Produtos · Anos 80</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline" style="margin-top:2rem">
+          <div class="tl">
+            <div class="tl-year">1959</div>
+            <div class="tl-text">Fundação da empresa de serralharia mecânica José Antunes, em Fafe — raiz do que viria a ser a ALANOL®</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">1977</div>
+            <div class="tl-text">Registo de patente de eletrobombas submersíveis por Albano Antunes Oliveira. Fundação formal da ALANOL® a 03/01/1977 e início da produção consistente de material próprio</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">1980s</div>
+            <div class="tl-text">Especialização em eletrobombas submersíveis. Expansão para depósitos inox, quadros eléctricos e serviços de montagem e reparação. Parceria com Franklin Electric® para motores submersíveis</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">1997</div>
+            <div class="tl-text">Mudança da denominação social para ALANOL S.A., sociedade anónima, com o objectivo de crescimento contínuo e sustentado</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">2000s</div>
+            <div class="tl-text">Lançamento das centrais de pressão inteligentes na gama de produtos</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">2005</div>
+            <div class="tl-text">Alargamento da actividade às eletrobombas de superfície (EH, EV, FNC) e às centrais de superfície automatizadas, incluindo aplicações AVAC/HVAC até 120 °C</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">2011</div>
+            <div class="tl-text">Obtenção do certificado de exame CE para equipamentos sob pressão, ao abrigo da Directiva 97/23 CE</div>
+          </div>
+          <div class="tl">
+            <div class="tl-year">2020+</div>
+            <div class="tl-text">Sistemas completos de bombagem solar com controlador Drive-Tech®, respondendo à crescente procura por soluções energeticamente eficientes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALORES -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem">
+        <div>
+          <div class="eyebrow" style="margin-bottom:.75rem">Os Nossos Valores</div>
+          <div style="display:flex;flex-direction:column;gap:.9rem">
+            <div class="specs-note">
+              <div class="specs-title">/div>
+              <p class="specs-text">As nossas eletrobombas AM/AT são fabricadas integralmente em Portugal, com controlo de qualidade em cada etapa do processo.</p>
+            </div>
+            <div class="specs-note">
+              <div class="specs-title">Inovação Contínua</div>
+              <p class="specs-text">Desde 1959 que desenvolvemos e patenteamos tecnologia própria, mantendo a ALANOL® na vanguarda do sector da bombagem submersível.</p>
+            </div>
+            <div class="specs-note">
+              <div class="specs-title">Serviço Técnico</div>
+              <p class="specs-text">Para além do fornecimento de equipamento, prestamos serviços de dimensionamento, montagem e reparação, com uma equipa técnica especializada.</p>
+            </div>
+            <div class="specs-note">
+              <div class="specs-title">Parcerias de Referência</div>
+              <p class="specs-text">Distribuidores de Franklin Electric® em Portugal, garantindo acesso às melhores tecnologias mundiais do sector.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAPA -->
+  <div style="background:var(--off);padding:4rem 0;border-top:1px solid var(--border)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 2rem">
+      <div class="eyebrow" style="margin-bottom:.5rem">Onde Estamos</div>
+      <h2 class="sec-h" style="margin-bottom:.5rem">Visite-nos em Fafe</h2>
+      <p style="font-size:15px;color:var(--steel);font-weight:300;margin-bottom:2rem">Rua do Sub-Rêgo, 182 Medelo · 4820-511 Fafe, Braga · Portugal</p>      <div style="display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start" class="empresa-mapa-grid">
+        <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);line-height:0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.4!2d-8.1525589!3d41.4693126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24e80ba77d2ab5%3A0xd103498ca45aa0a9!2sALANOL+ELETROBOMBAS+SA%2C+R.+Sub+R%C3%AAgo+182%2C+4820-511+Medelo!5e0!3m2!1spt!2spt!4v1700000000000!5m2!1spt!2spt"
+            width="100%" height="420" style="border:0;display:block" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.25rem">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--steel);margin-bottom:.75rem">Morada</div>
+            <p style="font-size:14px;color:var(--coal);font-weight:400;line-height:1.7">Rua do Sub-Rêgo, 182 Medelo<br>4820-511 Fafe<br>Braga, Portugal</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.25rem">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--steel);margin-bottom:.75rem">Contactos</div>
+            <p style="font-size:14px;color:var(--coal);font-weight:300;line-height:2">
+              <a href="tel:+351253501414" style="color:var(--coal)">+351 253 501 414</a> <span style="font-size:11px;color:var(--steel)">(fixa)</span><br>
+              <a href="tel:+351914999307" style="color:var(--coal)">+351 914 999 307</a> <span style="font-size:11px;color:var(--steel)">(móvel)</span><br>
+              <a href="/cdn-cgi/l/email-protection#36575a5758595a76575a5758595a184642" style="color:#2258a2"><span class="__cf_email__" data-cfemail="dbbdb2b7b2abbebab7adbea89bbab7bab5b4b7f5abaf">[email&#160;protected]</span></a>
+            </p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:1.25rem">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--steel);margin-bottom:.75rem">Horário</div>
+            <p style="font-size:14px;color:var(--coal);font-weight:300;line-height:1.8">Segunda a Sexta<br>9h00 – 18h00</p>
+          </div>
+          <a href="https://www.google.com/maps/dir//ALANOL+ELETROBOMBAS+SA,+R.+Sub+R%C3%AAgo+182,+4820-511+Medelo/@41.4693126,-8.1525589,17z" target="_blank"
+             style="display:block;background:#2258a2;color:#fff;text-align:center;padding:12px;border-radius:4px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase">
+            Abrir no Google Maps →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ PAGE CONTACTO ══ -->
+<div class="page" id="page-contacto">
+  <div class="cat-bar">
+    <div class="cat-bar-inner">
+      <div class="bc"><a onclick="gohome()">Início</a><span class="sep">›</span><span class="cur">Contacto</span></div>
+      <div class="cat-eyebrow">Fale Connosco</div>
+      <h1 class="cat-title">Fale Connosco</h1>
+    </div>
+  </div>
+  <div class="contact-section" style="background:var(--off);padding-top:3rem"><div class="contact-inner">
+    <div>
+      <div class="c-items">
+        <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Morada</h4><p>Rua do Sub-Rêgo, 182 Medelo<br>4820-511 Fafe, Portugal</p></div></div>
+        <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.69 19.79 19.79 0 01.06 1.05 2 2 0 012.03 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><h4>Telefone</h4><a href="tel:+351253501414">+351 253 501 414</a> <small style="color:var(--steel);font-size:11px">(rede fixa)</small><br><a href="tel:+351914999307">+351 914 999 307</a> <small style="color:var(--steel);font-size:11px">(rede móvel)</small></div></div>
+        <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Email</h4><a href="/cdn-cgi/l/email-protection#bcddd0ddd2d3d0fcddd0ddd2d3d092ccc8"><span class="__cf_email__" data-cfemail="fd9c919c939291bd9c919c939291d38d89">[email&#160;protected]</span></a></div></div>
+        <div class="c-item"><div class="c-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Horário</h4><p>Segunda a Sexta: 9h00 – 18h00</p></div></div>
+      </div>
+    </div>
+    <div class="form-box">
+      <div class="form-title">Fale Connosco</div>
+
+      <!-- SUCESSO -->
+      <div id="formSuccess" style="display:none;text-align:center;padding:2.5rem 1rem">
+        <div style="width:56px;height:56px;background:#e8f5ec;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#156038" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;text-transform:uppercase;color:var(--coal);margin-bottom:.5rem">Pedido Enviado!</h3>
+        <p style="font-size:14px;color:var(--steel);font-weight:300;line-height:1.6">Obrigado pelo seu contacto. A nossa equipa responderá em menos de 24 horas úteis.</p>
+        <button onclick="resetForm()" style="margin-top:1.5rem;background:transparent;border:1.5px solid var(--brand);color:var(--brand);padding:9px 20px;border-radius:3px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer">Novo Pedido</button>
+      </div>
+
+      <!-- ERRO -->
+      <div id="formError" style="display:none;background:#fff0f0;border:1px solid #f5c6c6;border-radius:4px;padding:1rem 1.25rem;margin-bottom:1rem;font-size:13px;color:#c0392b;font-weight:300"></div>
+
+      <!-- FORM -->
+      <form id="contactForm" novalidate>
+        <input type="hidden" name="access_key" value="a4749857-1a88-4dda-9581-8a44453c0204">
+        <input type="hidden" name="subject" value="Novo pedido de orçamento — Alanol">
+        <input type="hidden" name="cc" value="alanol@alanol.pt">
+        <input type="hidden" name="from_name" value="Website Alanol">
+        <input type="hidden" name="redirect" value="false">
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="form-2">
+          <div class="form-row">
+            <label>Nome <span style="color:#e74c3c">*</span></label>
+            <input type="text" name="nome" id="fNome" placeholder="João Silva" required>
+            <span class="field-err" id="errNome"></span>
+          </div>
+          <div class="form-row">
+            <label>Empresa</label>
+            <input type="text" name="empresa" placeholder="Empresa, Lda.">
+          </div>
+        </div>
+        <div class="form-2">
+          <div class="form-row">
+            <label>Email <span style="color:#e74c3c">*</span></label>
+            <input type="email" name="email" id="fEmail" placeholder="joao@empresa.pt" required>
+            <span class="field-err" id="errEmail"></span>
+          </div>
+          <div class="form-row">
+            <label>Telefone</label>
+            <input type="tel" name="telefone" placeholder="+351 912 345 678">
+			<input type="tel" name="telefone" placeholder="+351 912 345 678">
+          </div>
+        </div>
+        <div class="form-row">
+          <label>Aplicação</label>
+          <select name="aplicacao">
+            <option value="">Selecionar...</option>
+            <option>Furo — abastecimento doméstico</option>
+            <option>Furo — rega agrícola</option>
+            <option>Poço — drenagem</option>
+            <option>Poço — abastecimento</option>
+            <option>Superfície — pressurização predial</option>
+            <option>Bombagem Solar</option>
+            <option>Industrial</option>
+            <option>Outro / Não sei</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Mensagem <span style="color:#e74c3c">*</span></label>
+          <textarea name="mensagem" id="fMsg" placeholder="Descreva a aplicação (profundidade do furo/poço, caudal necessário, tipo de água...)..." required></textarea>
+          <span class="field-err" id="errMsg"></span>
+        </div>
+        <button type="submit" class="form-submit" id="formBtn">
+          <span id="formBtnText">Enviar Fale Connosco</span>
+          <span id="formBtnLoad" style="display:none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="animation:spin .8s linear infinite;vertical-align:middle"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            A enviar...
+          </span>
+        </button>
+      </form>
+    </div>
+  </div></div>
+</div>
+<script>
+(function(){
+  var style=document.createElement('style');
+  style.textContent='body.fade-out{animation:pageFadeOut .2s ease forwards}@keyframes pageFadeOut{to{opacity:0;transform:translateY(-4px)}}';
+  document.head.appendChild(style);
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]');
+    if(!a)return;
+    var href=a.getAttribute('href');
+    if(!href||href.startsWith('#')||href.startsWith('javascript')||href.startsWith('tel:')||href.startsWith('mailto:')||href.startsWith('http')||a.target==='_blank')return;
+    e.preventDefault();
+    document.body.classList.add('fade-out');
+    setTimeout(function(){window.location.href=href;},200);
+  });
+})();
+</script>
+<div id="site-footer"></div>
+<script src="../js/layout.js?v=202604271305"></script>
+</body>
+</html>
